@@ -1,0 +1,25 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  business: one
+  all_day: false
+  sleep_away: false
+  swimming: false
+  climbing: false
+  archery: false
+  arts_crafts: false
+  jewish: false
+  christian: false
+  muslim: false
+
+two:
+  business: two
+  all_day: false
+  sleep_away: false
+  swimming: false
+  climbing: false
+  archery: false
+  arts_crafts: false
+  jewish: false
+  christian: false
+  muslim: false
