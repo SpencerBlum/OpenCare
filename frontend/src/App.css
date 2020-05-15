@@ -36,3 +36,81 @@
     transform: rotate(360deg);
   }
 }
+
+/* header */
+/*  */
+/*  */
+
+.headerContainer{
+   text-align: center;
+  background-color: rgb(70, 194, 224);
+  padding-bottom: 80px;
+}
+
+.input-div{
+  float: center;
+  border-color: #eeeeef;
+  /* box-shadow: 0 0 10px rgba(0,0,0,.1); */
+  /* background-color: beige; */
+}
+.input-box{
+  /* background: transparent; */
+  border: 0;
+  
+}
+
+/* header */
+/*  */
+/*  */
+.filter-container{
+  /* float: left; */
+  background-color: rgb(245, 117, 117);
+  /* padding-right: 40px; */
+  /* padding-left: 10px; */
+  padding-bottom: 100vh;
+  width: 25%;
+
+}
+
+.businesscard-container{
+  /* float: center; */
+  width: 60%;
+}
+
+/* businessCard */
+
+.business-card{
+  margin-left: 5px;
+  margin-right: 20px;
+  /* padding-left: 20px; */
+  /* background-color: rgb(172, 220, 235); */
+  padding: 20px; 
+  border: .5px solid rgb(233, 233, 233);
+  border-radius: 7px;
+  display: flex;
+}
+
+.business-card:hover{
+  box-shadow: 0 0 10px rgba(0,0,0,.1);
+}
+
+
+.card-img{
+  /* width:  100%; */
+
+}
+
+.card-content{
+  width: 80%;
+  text-align: left;
+  margin-left: 5px;
+}
+/* businessCard */
+
+
+.homebody-container {
+  height: 100%;
+  display: flex;
+}
+
+
