@@ -2012,3 +2012,37 @@ Processing by BusinessesController#index as */*
 Completed 200 OK in 32ms (Views: 26.2ms | ActiveRecord: 0.6ms | Allocations: 1043)
 
 
+Started GET "/businesses" for ::1 at 2020-05-15 00:14:21 -0400
+  [1m[35m (7.6ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by BusinessesController#index as */*
+Completed 500 Internal Server Error in 33ms (ActiveRecord: 0.0ms | Allocations: 6685)
+
+
+  
+NameError (undefined local variable or method `follows' for #<Class:0x00007ffaffc46628>):
+  
+app/models/business.rb:9:in `<class:Business>'
+app/models/business.rb:1:in `<main>'
+app/controllers/businesses_controller.rb:4:in `index'
+Started GET "/businesses" for ::1 at 2020-05-15 00:14:26 -0400
+Processing by BusinessesController#index as */*
+  [1m[36mBusiness Load (0.6ms)[0m  [1m[34mSELECT "businesses".* FROM "businesses"[0m
+  ↳ app/controllers/businesses_controller.rb:6:in `index'
+Completed 200 OK in 24ms (Views: 22.9ms | ActiveRecord: 0.9ms | Allocations: 10882)
+
+
+Started GET "/businesses" for ::1 at 2020-05-15 00:14:44 -0400
+Processing by BusinessesController#index as */*
+  [1m[36mBusiness Load (0.1ms)[0m  [1m[34mSELECT "businesses".* FROM "businesses"[0m
+  ↳ app/controllers/businesses_controller.rb:6:in `index'
+Completed 200 OK in 2ms (Views: 1.7ms | ActiveRecord: 0.1ms | Allocations: 1060)
+
+
+Started GET "/businesses" for ::1 at 2020-05-15 00:18:00 -0400
+Processing by BusinessesController#index as */*
+  [1m[36mBusiness Load (0.8ms)[0m  [1m[34mSELECT "businesses".* FROM "businesses"[0m
+  ↳ app/controllers/businesses_controller.rb:6:in `index'
+Completed 200 OK in 38ms (Views: 33.4ms | ActiveRecord: 0.8ms | Allocations: 1060)
+
+

@@ -21,7 +21,7 @@ const BusinessCardContainer = () => {
 return(
     <div className = "businesscard-container" >
     Card Container
-    {allBusinesses.map(business => <BusinessCard business= {business} />)}
+    {allBusinesses.map(business => <BusinessCard key = {business.id} business= {business} />)}
     
     </div>
 )
