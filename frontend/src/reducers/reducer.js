@@ -1,6 +1,7 @@
 const defaultState = {
     allBusinesses: [],
-    currentBusiness: {}
+    currentBusiness: {},
+    currentUser: {}
   }
 
 
@@ -14,6 +15,9 @@ const defaultState = {
       }
       case "ADD_CURRENT_BUSINESS": {
         return {...state, currentBusiness: action.payload}
+      }
+      case "ADD_CURRENT_USER": {
+        return {...state, currentUser: action.payload}
       }
       default:
         return state
