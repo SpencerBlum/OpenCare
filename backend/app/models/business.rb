@@ -6,7 +6,7 @@ class Business < ApplicationRecord
   has_many :hours
 
   has_many :follows
-  has_many :users, through: follows
+  has_many :users, through: :follows
 
   has_many :reviews 
   has_many :users, through: :reviews

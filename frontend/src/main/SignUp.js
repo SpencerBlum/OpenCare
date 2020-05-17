@@ -1,6 +1,6 @@
 import React from 'react';
 import { useHistory } from "react-router-dom";
-import {useSelector, useDispatch } from 'react-redux'
+import { useDispatch } from 'react-redux'
 
 const SignUp = () => {
 
@@ -8,18 +8,13 @@ const SignUp = () => {
     const dispatch = useDispatch()
     const history = useHistory()
 
-    const {currentUser} = useSelector(state => {
-        return {currentUser: state.currentUser }
-    })
-
-    console.log(currentUser)
 
     const handleSubmit = (e) => {
         e.preventDefault()
 
-        if(e.target.email.value == ""){
+        if(e.target.email.value === ""){
             window.alert("Account must have a email")
-        } else if (e.target.password.value == "" || e.target.confirmPassword.value == "" ){
+        } else if (e.target.password.value === "" || e.target.confirmPassword.value === "" ){
             window.alert("Please Confirm Password")
         }else if  (e.target.password.value !== e.target.confirmPassword.value ){
             window.alert("Passwords must be the same")
@@ -28,9 +23,9 @@ const SignUp = () => {
     let data = { 
         email: e.target.email.value,
         password: e.target.password.value
-     }
+    }
 
-     fetch('http://localhost:3000/createAccount', {
+    fetch('http://localhost:3000/createAccount', {
         method: 'POST', // or 'PUT'
         headers: {
             'Content-Type': 'application/json',

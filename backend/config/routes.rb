@@ -3,6 +3,9 @@ Rails.application.routes.draw do
 
   get '/businesses', to: 'businesses#index'
 
+  get '/reviews/:id', to: 'businesses#reviews'
+
   post '/login', to: 'users#login'
   post '/createAccount', to: 'users#create_account'
+
 end

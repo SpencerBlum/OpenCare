@@ -11,17 +11,22 @@ const BusinessCardContainer = () => {
         }
     })
 
-    // const renderCards = () =>{
-    //     allBusinesses.forEach(business => {
-    //         return <BusinessCard business= {business}/>
-    //     }) 
-    // } 
+    const renderCards = () =>{
+        console.log("happy")
+        if(allBusinesses !== {}){
+        return allBusinesses.map(business => {
+        return    <BusinessCard key = {business.id} business= {business}/>
+        }) 
+    } 
     console.log(allBusinesses)
+        }
 
 return(
     <div className = "businesscard-container" >
     Card Container
-    {allBusinesses.map(business => <BusinessCard key = {business.id} business= {business} />)}
+
+    {renderCards()}
+    {/* {allBusinesses.map(business => <BusinessCard key = {business.id} business= {business} />)} */}
     
     </div>
 )
