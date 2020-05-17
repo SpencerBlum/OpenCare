@@ -1,7 +1,7 @@
 const defaultState = {
     allBusinesses: [],
     currentBusiness: null,
-    currentUser: {}
+    currentUser: null
   }
 
 

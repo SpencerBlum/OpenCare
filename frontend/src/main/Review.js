@@ -2,6 +2,8 @@ import React, { Component} from 'react';
 
 import { connect } from 'react-redux'
 
+import swal from 'sweetalert';
+
 class ReviewCard extends Component {
 
     state = {
@@ -21,7 +23,36 @@ class ReviewCard extends Component {
 
     handleSubmit= ()=> {
         if(this.state.formValue =="" || this.state.ratingValue =="" ){
-            window.alert("Must have Rating and Written Review")
+            swal("Must have Rating and Written Review")
+            // swal("Good job!", "Must have Rating and Written Review!", "success");
+        } else if (this.props.currentUser === null){
+            swal("Sign in to write a review")
+        } else {
+
+
+            let data = {
+                formValue: this.state.formValue,
+                ratingValue: this.state.ratingValue,
+                currentUser: this.props.currentUser.id,
+                currentBusiness: this.props.currentBusiness.id
+
+            }
+
+            fetch('http://localhost:3000/review/new', {
+            method: 'POST', // or 'PUT'
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(data),
+            })
+            .then(response => response.json())
+            .then(data => {
+            console.log('Success:', data);
+
+            })
+            .catch((error) => {
+            console.error('Error:', error);
+            });
         }
     }
 
@@ -51,7 +82,7 @@ class ReviewCard extends Component {
 const mapStateToProps = state =>  {
     return { 
         currentBusiness: state.currentBusiness,
-        currentReviews: state.currentReviews
+        currentUser: state.currentUser
     
     }
 }
