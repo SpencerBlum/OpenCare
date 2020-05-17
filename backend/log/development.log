@@ -5954,3 +5954,472 @@ Processing by BusinessesController#index as */*
 Completed 200 OK in 154ms (Views: 148.6ms | ActiveRecord: 2.5ms | Allocations: 4312)
 
 
+Started GET "/businesses" for ::1 at 2020-05-16 22:36:11 -0400
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by BusinessesController#index as */*
+  [1m[36mUser Load (7.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  [1m[36mBusiness Load (7.5ms)[0m  [1m[34mSELECT "businesses".* FROM "businesses"[0m
+  ↳ app/controllers/businesses_controller.rb:6:in `index'
+[active_model_serializers]   [1m[36mReview Load (6.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."business_id" = ?[0m  [["business_id", 1]]
+[active_model_serializers]   ↳ app/serializers/business_serializer.rb:10:in `reviews'
+[active_model_serializers]   [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/business_serializer.rb:13:in `block in reviews'
+[active_model_serializers]   [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/business_serializer.rb:13:in `block in reviews'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (110.33ms)
+Completed 200 OK in 194ms (Views: 162.7ms | ActiveRecord: 21.4ms | Allocations: 4415)
+
+
+Started GET "/businesses" for ::1 at 2020-05-16 22:46:28 -0400
+  [1m[35m (2.6ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by BusinessesController#index as */*
+  [1m[36mUser Load (60.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  [1m[36mBusiness Load (25.0ms)[0m  [1m[34mSELECT "businesses".* FROM "businesses"[0m
+  ↳ app/controllers/businesses_controller.rb:6:in `index'
+[active_model_serializers]   [1m[36mReview Load (15.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."business_id" = ?[0m  [["business_id", 1]]
+[active_model_serializers]   ↳ app/serializers/business_serializer.rb:10:in `reviews'
+[active_model_serializers]   [1m[36mUser Load (3.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/business_serializer.rb:13:in `block in reviews'
+[active_model_serializers]   [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/business_serializer.rb:13:in `block in reviews'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (5111.92ms)
+Completed 200 OK in 5303ms (Views: 5188.4ms | ActiveRecord: 105.7ms | Allocations: 4430)
+
+
+Started GET "/businesses" for ::1 at 2020-05-16 22:47:18 -0400
+Processing by BusinessesController#index as */*
+  [1m[36mUser Load (2.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  [1m[36mBusiness Load (2.6ms)[0m  [1m[34mSELECT "businesses".* FROM "businesses"[0m
+  ↳ app/controllers/businesses_controller.rb:6:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."business_id" = ?[0m  [["business_id", 1]]
+[active_model_serializers]   ↳ app/serializers/business_serializer.rb:10:in `reviews'
+[active_model_serializers]   [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/business_serializer.rb:13:in `block in reviews'
+[active_model_serializers]   [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/business_serializer.rb:13:in `block in reviews'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (3910.17ms)
+Completed 200 OK in 3994ms (Views: 3979.9ms | ActiveRecord: 6.0ms | Allocations: 4323)
+
+
+Started GET "/businesses" for ::1 at 2020-05-16 22:47:27 -0400
+Processing by BusinessesController#index as */*
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  [1m[36mBusiness Load (0.1ms)[0m  [1m[34mSELECT "businesses".* FROM "businesses"[0m
+  ↳ app/controllers/businesses_controller.rb:6:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."business_id" = ?[0m  [["business_id", 1]]
+[active_model_serializers]   ↳ app/serializers/business_serializer.rb:10:in `reviews'
+[active_model_serializers]   [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/business_serializer.rb:13:in `block in reviews'
+[active_model_serializers]   [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/business_serializer.rb:13:in `block in reviews'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (94.96ms)
+Completed 200 OK in 119ms (Views: 118.0ms | ActiveRecord: 0.9ms | Allocations: 4312)
+
+
+Started GET "/businesses" for ::1 at 2020-05-16 22:47:43 -0400
+Processing by BusinessesController#index as */*
+  [1m[36mUser Load (2.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  [1m[36mBusiness Load (0.2ms)[0m  [1m[34mSELECT "businesses".* FROM "businesses"[0m
+  ↳ app/controllers/businesses_controller.rb:6:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.9ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."business_id" = ?[0m  [["business_id", 1]]
+[active_model_serializers]   ↳ app/serializers/business_serializer.rb:10:in `reviews'
+[active_model_serializers]   [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/business_serializer.rb:13:in `block in reviews'
+[active_model_serializers]   [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/business_serializer.rb:13:in `block in reviews'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (41.12ms)
+Completed 200 OK in 78ms (Views: 71.2ms | ActiveRecord: 4.0ms | Allocations: 4312)
+
+
+Started GET "/businesses" for ::1 at 2020-05-16 22:47:50 -0400
+Processing by BusinessesController#index as */*
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  [1m[36mBusiness Load (1.4ms)[0m  [1m[34mSELECT "businesses".* FROM "businesses"[0m
+  ↳ app/controllers/businesses_controller.rb:6:in `index'
+[active_model_serializers]   [1m[36mReview Load (1.4ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."business_id" = ?[0m  [["business_id", 1]]
+[active_model_serializers]   ↳ app/serializers/business_serializer.rb:10:in `reviews'
+[active_model_serializers]   [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/business_serializer.rb:13:in `block in reviews'
+[active_model_serializers]   [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/business_serializer.rb:13:in `block in reviews'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (58.28ms)
+Completed 200 OK in 85ms (Views: 79.8ms | ActiveRecord: 3.8ms | Allocations: 4312)
+
+
+Started GET "/businesses" for ::1 at 2020-05-16 22:47:57 -0400
+Processing by BusinessesController#index as */*
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  [1m[36mBusiness Load (0.2ms)[0m  [1m[34mSELECT "businesses".* FROM "businesses"[0m
+  ↳ app/controllers/businesses_controller.rb:6:in `index'
+[active_model_serializers]   [1m[36mReview Load (2.5ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."business_id" = ?[0m  [["business_id", 1]]
+[active_model_serializers]   ↳ app/serializers/business_serializer.rb:10:in `reviews'
+[active_model_serializers]   [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/business_serializer.rb:13:in `block in reviews'
+[active_model_serializers]   [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/business_serializer.rb:13:in `block in reviews'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (35.54ms)
+Completed 200 OK in 71ms (Views: 62.5ms | ActiveRecord: 4.2ms | Allocations: 4312)
+
+
+Started GET "/businesses" for ::1 at 2020-05-16 22:48:30 -0400
+Processing by BusinessesController#index as */*
+  [1m[36mUser Load (3.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  [1m[36mBusiness Load (0.2ms)[0m  [1m[34mSELECT "businesses".* FROM "businesses"[0m
+  ↳ app/controllers/businesses_controller.rb:6:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."business_id" = ?[0m  [["business_id", 1]]
+[active_model_serializers]   ↳ app/serializers/business_serializer.rb:10:in `reviews'
+[active_model_serializers]   [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/business_serializer.rb:13:in `block in reviews'
+[active_model_serializers]   [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/business_serializer.rb:13:in `block in reviews'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (1267.85ms)
+Completed 200 OK in 1314ms (Views: 1306.1ms | ActiveRecord: 4.3ms | Allocations: 4316)
+
+
+Started GET "/businesses" for ::1 at 2020-05-16 22:51:22 -0400
+Processing by BusinessesController#index as */*
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  [1m[36mBusiness Load (0.3ms)[0m  [1m[34mSELECT "businesses".* FROM "businesses"[0m
+  ↳ app/controllers/businesses_controller.rb:6:in `index'
+[active_model_serializers]   [1m[36mReview Load (1.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."business_id" = ?[0m  [["business_id", 1]]
+[active_model_serializers]   ↳ app/serializers/business_serializer.rb:10:in `reviews'
+[active_model_serializers]   [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/business_serializer.rb:13:in `block in reviews'
+[active_model_serializers]   [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/business_serializer.rb:13:in `block in reviews'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (70.53ms)
+Completed 200 OK in 125ms (Views: 114.1ms | ActiveRecord: 4.4ms | Allocations: 4313)
+
+
+Started GET "/businesses" for ::1 at 2020-05-16 22:51:24 -0400
+Processing by BusinessesController#index as */*
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  [1m[36mBusiness Load (0.6ms)[0m  [1m[34mSELECT "businesses".* FROM "businesses"[0m
+  ↳ app/controllers/businesses_controller.rb:6:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."business_id" = ?[0m  [["business_id", 1]]
+[active_model_serializers]   ↳ app/serializers/business_serializer.rb:10:in `reviews'
+[active_model_serializers]   [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/business_serializer.rb:13:in `block in reviews'
+[active_model_serializers]   [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/business_serializer.rb:13:in `block in reviews'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (22.39ms)
+Completed 200 OK in 42ms (Views: 39.5ms | ActiveRecord: 1.6ms | Allocations: 4312)
+
+
+Started GET "/businesses" for ::1 at 2020-05-16 22:51:45 -0400
+Processing by BusinessesController#index as */*
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  [1m[36mBusiness Load (0.1ms)[0m  [1m[34mSELECT "businesses".* FROM "businesses"[0m
+  ↳ app/controllers/businesses_controller.rb:6:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."business_id" = ?[0m  [["business_id", 1]]
+[active_model_serializers]   ↳ app/serializers/business_serializer.rb:10:in `reviews'
+[active_model_serializers]   [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/business_serializer.rb:13:in `block in reviews'
+[active_model_serializers]   [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/business_serializer.rb:13:in `block in reviews'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (8.88ms)
+Completed 200 OK in 867ms (Views: 865.0ms | ActiveRecord: 1.2ms | Allocations: 4316)
+
+
+Started GET "/businesses" for ::1 at 2020-05-16 22:53:01 -0400
+Processing by BusinessesController#index as */*
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  [1m[36mBusiness Load (3.1ms)[0m  [1m[34mSELECT "businesses".* FROM "businesses"[0m
+  ↳ app/controllers/businesses_controller.rb:6:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."business_id" = ?[0m  [["business_id", 1]]
+[active_model_serializers]   ↳ app/serializers/business_serializer.rb:10:in `reviews'
+[active_model_serializers]   [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/business_serializer.rb:13:in `block in reviews'
+[active_model_serializers]   [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/business_serializer.rb:13:in `block in reviews'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (27.19ms)
+Completed 200 OK in 85ms (Views: 74.0ms | ActiveRecord: 4.4ms | Allocations: 4312)
+
+
+Started GET "/businesses" for ::1 at 2020-05-16 23:12:55 -0400
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by BusinessesController#index as */*
+  [1m[36mUser Load (3.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  [1m[36mBusiness Load (1.3ms)[0m  [1m[34mSELECT "businesses".* FROM "businesses"[0m
+  ↳ app/controllers/businesses_controller.rb:6:in `index'
+[active_model_serializers]   [1m[36mReview Load (2.4ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."business_id" = ?[0m  [["business_id", 1]]
+[active_model_serializers]   ↳ app/serializers/business_serializer.rb:10:in `reviews'
+[active_model_serializers]   [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/business_serializer.rb:13:in `block in reviews'
+[active_model_serializers]   [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/business_serializer.rb:13:in `block in reviews'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (44.82ms)
+Completed 200 OK in 110ms (Views: 88.5ms | ActiveRecord: 8.7ms | Allocations: 4415)
+
+
+Started GET "/businesses" for ::1 at 2020-05-16 23:21:54 -0400
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by BusinessesController#index as */*
+  [1m[36mUser Load (25.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  [1m[36mBusiness Load (7.6ms)[0m  [1m[34mSELECT "businesses".* FROM "businesses"[0m
+  ↳ app/controllers/businesses_controller.rb:6:in `index'
+[active_model_serializers]   [1m[36mReview Load (11.0ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."business_id" = ?[0m  [["business_id", 1]]
+[active_model_serializers]   ↳ app/serializers/business_serializer.rb:10:in `reviews'
+[active_model_serializers]   [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/business_serializer.rb:13:in `block in reviews'
+[active_model_serializers]   [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/business_serializer.rb:13:in `block in reviews'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (55.86ms)
+Completed 200 OK in 142ms (Views: 90.9ms | ActiveRecord: 44.4ms | Allocations: 4415)
+
+
+Started GET "/businesses" for ::1 at 2020-05-16 23:23:14 -0400
+Processing by BusinessesController#index as */*
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  [1m[36mBusiness Load (2.7ms)[0m  [1m[34mSELECT "businesses".* FROM "businesses"[0m
+  ↳ app/controllers/businesses_controller.rb:6:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."business_id" = ?[0m  [["business_id", 1]]
+[active_model_serializers]   ↳ app/serializers/business_serializer.rb:10:in `reviews'
+[active_model_serializers]   [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/business_serializer.rb:13:in `block in reviews'
+[active_model_serializers]   [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/business_serializer.rb:13:in `block in reviews'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (38.25ms)
+Completed 200 OK in 80ms (Views: 72.9ms | ActiveRecord: 5.1ms | Allocations: 4315)
+
+
+Started GET "/businesses" for ::1 at 2020-05-16 23:24:23 -0400
+Processing by BusinessesController#index as */*
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  [1m[36mBusiness Load (0.2ms)[0m  [1m[34mSELECT "businesses".* FROM "businesses"[0m
+  ↳ app/controllers/businesses_controller.rb:6:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."business_id" = ?[0m  [["business_id", 1]]
+[active_model_serializers]   ↳ app/serializers/business_serializer.rb:10:in `reviews'
+[active_model_serializers]   [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/business_serializer.rb:13:in `block in reviews'
+[active_model_serializers]   [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/business_serializer.rb:13:in `block in reviews'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (81.99ms)
+Completed 200 OK in 130ms (Views: 124.9ms | ActiveRecord: 1.2ms | Allocations: 4312)
+
+
+Started GET "/businesses" for ::1 at 2020-05-16 23:28:36 -0400
+Processing by BusinessesController#index as */*
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  [1m[36mBusiness Load (0.1ms)[0m  [1m[34mSELECT "businesses".* FROM "businesses"[0m
+  ↳ app/controllers/businesses_controller.rb:6:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."business_id" = ?[0m  [["business_id", 1]]
+[active_model_serializers]   ↳ app/serializers/business_serializer.rb:10:in `reviews'
+[active_model_serializers]   [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/business_serializer.rb:13:in `block in reviews'
+[active_model_serializers]   [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/business_serializer.rb:13:in `block in reviews'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (31.23ms)
+Completed 200 OK in 45ms (Views: 42.5ms | ActiveRecord: 1.7ms | Allocations: 4312)
+
+
+Started GET "/businesses" for ::1 at 2020-05-16 23:34:34 -0400
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by BusinessesController#index as */*
+  [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  [1m[36mBusiness Load (2.6ms)[0m  [1m[34mSELECT "businesses".* FROM "businesses"[0m
+  ↳ app/controllers/businesses_controller.rb:6:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.5ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."business_id" = ?[0m  [["business_id", 1]]
+[active_model_serializers]   ↳ app/serializers/business_serializer.rb:10:in `reviews'
+[active_model_serializers]   [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/business_serializer.rb:13:in `block in reviews'
+[active_model_serializers]   [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/business_serializer.rb:13:in `block in reviews'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (51.03ms)
+Completed 200 OK in 114ms (Views: 97.1ms | ActiveRecord: 5.5ms | Allocations: 4415)
+
+
+Started GET "/businesses" for ::1 at 2020-05-16 23:38:58 -0400
+Processing by BusinessesController#index as */*
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  [1m[36mBusiness Load (0.2ms)[0m  [1m[34mSELECT "businesses".* FROM "businesses"[0m
+  ↳ app/controllers/businesses_controller.rb:6:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."business_id" = ?[0m  [["business_id", 1]]
+[active_model_serializers]   ↳ app/serializers/business_serializer.rb:10:in `reviews'
+[active_model_serializers]   [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/business_serializer.rb:13:in `block in reviews'
+[active_model_serializers]   [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/business_serializer.rb:13:in `block in reviews'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (41.45ms)
+Completed 200 OK in 110ms (Views: 102.9ms | ActiveRecord: 2.3ms | Allocations: 4312)
+
+
+Started GET "/businesses" for ::1 at 2020-05-16 23:39:11 -0400
+Processing by BusinessesController#index as */*
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  [1m[36mBusiness Load (0.9ms)[0m  [1m[34mSELECT "businesses".* FROM "businesses"[0m
+  ↳ app/controllers/businesses_controller.rb:6:in `index'
+[active_model_serializers]   [1m[36mReview Load (2.5ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."business_id" = ?[0m  [["business_id", 1]]
+[active_model_serializers]   ↳ app/serializers/business_serializer.rb:10:in `reviews'
+[active_model_serializers]   [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/business_serializer.rb:13:in `block in reviews'
+[active_model_serializers]   [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/business_serializer.rb:13:in `block in reviews'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (42.66ms)
+Completed 200 OK in 88ms (Views: 84.1ms | ActiveRecord: 3.9ms | Allocations: 4312)
+
+
+Started GET "/businesses" for ::1 at 2020-05-16 23:39:35 -0400
+Processing by BusinessesController#index as */*
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  [1m[36mBusiness Load (0.1ms)[0m  [1m[34mSELECT "businesses".* FROM "businesses"[0m
+  ↳ app/controllers/businesses_controller.rb:6:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."business_id" = ?[0m  [["business_id", 1]]
+[active_model_serializers]   ↳ app/serializers/business_serializer.rb:10:in `reviews'
+[active_model_serializers]   [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/business_serializer.rb:13:in `block in reviews'
+[active_model_serializers]   [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/business_serializer.rb:13:in `block in reviews'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (29.43ms)
+Completed 200 OK in 45ms (Views: 43.8ms | ActiveRecord: 0.9ms | Allocations: 4312)
+
+
+Started GET "/businesses" for ::1 at 2020-05-16 23:40:33 -0400
+Processing by BusinessesController#index as */*
+  [1m[36mUser Load (2.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  [1m[36mBusiness Load (0.2ms)[0m  [1m[34mSELECT "businesses".* FROM "businesses"[0m
+  ↳ app/controllers/businesses_controller.rb:6:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."business_id" = ?[0m  [["business_id", 1]]
+[active_model_serializers]   ↳ app/serializers/business_serializer.rb:10:in `reviews'
+[active_model_serializers]   [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/business_serializer.rb:13:in `block in reviews'
+[active_model_serializers]   [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/business_serializer.rb:13:in `block in reviews'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (35.02ms)
+Completed 200 OK in 122ms (Views: 116.1ms | ActiveRecord: 3.7ms | Allocations: 4315)
+
+
+Started GET "/businesses" for ::1 at 2020-05-16 23:41:38 -0400
+Processing by BusinessesController#index as */*
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  [1m[36mBusiness Load (0.1ms)[0m  [1m[34mSELECT "businesses".* FROM "businesses"[0m
+  ↳ app/controllers/businesses_controller.rb:6:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."business_id" = ?[0m  [["business_id", 1]]
+[active_model_serializers]   ↳ app/serializers/business_serializer.rb:10:in `reviews'
+[active_model_serializers]   [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/business_serializer.rb:13:in `block in reviews'
+[active_model_serializers]   [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/business_serializer.rb:13:in `block in reviews'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (61.66ms)
+Completed 200 OK in 115ms (Views: 111.4ms | ActiveRecord: 1.2ms | Allocations: 4312)
+
+
+Started GET "/businesses" for ::1 at 2020-05-16 23:41:48 -0400
+Processing by BusinessesController#index as */*
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  [1m[36mBusiness Load (0.8ms)[0m  [1m[34mSELECT "businesses".* FROM "businesses"[0m
+  ↳ app/controllers/businesses_controller.rb:6:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."business_id" = ?[0m  [["business_id", 1]]
+[active_model_serializers]   ↳ app/serializers/business_serializer.rb:10:in `reviews'
+[active_model_serializers]   [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/business_serializer.rb:13:in `block in reviews'
+[active_model_serializers]   [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/business_serializer.rb:13:in `block in reviews'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (23.08ms)
+Completed 200 OK in 50ms (Views: 48.1ms | ActiveRecord: 1.7ms | Allocations: 4312)
+
+
+Started GET "/businesses" for ::1 at 2020-05-16 23:42:07 -0400
+Processing by BusinessesController#index as */*
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  [1m[36mBusiness Load (0.1ms)[0m  [1m[34mSELECT "businesses".* FROM "businesses"[0m
+  ↳ app/controllers/businesses_controller.rb:6:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."business_id" = ?[0m  [["business_id", 1]]
+[active_model_serializers]   ↳ app/serializers/business_serializer.rb:10:in `reviews'
+[active_model_serializers]   [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/business_serializer.rb:13:in `block in reviews'
+[active_model_serializers]   [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/business_serializer.rb:13:in `block in reviews'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (5.09ms)
+Completed 200 OK in 10ms (Views: 8.7ms | ActiveRecord: 0.7ms | Allocations: 4313)
+
+
+Started GET "/businesses" for ::1 at 2020-05-16 23:42:58 -0400
+Processing by BusinessesController#index as */*
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  [1m[36mBusiness Load (0.3ms)[0m  [1m[34mSELECT "businesses".* FROM "businesses"[0m
+  ↳ app/controllers/businesses_controller.rb:6:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."business_id" = ?[0m  [["business_id", 1]]
+[active_model_serializers]   ↳ app/serializers/business_serializer.rb:10:in `reviews'
+[active_model_serializers]   [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/business_serializer.rb:13:in `block in reviews'
+[active_model_serializers]   [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/business_serializer.rb:13:in `block in reviews'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (23.55ms)
+Completed 200 OK in 56ms (Views: 50.2ms | ActiveRecord: 1.7ms | Allocations: 4312)
+
+
+Started GET "/businesses" for ::1 at 2020-05-16 23:45:42 -0400
+Processing by BusinessesController#index as */*
+  [1m[36mUser Load (2.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  [1m[36mBusiness Load (0.4ms)[0m  [1m[34mSELECT "businesses".* FROM "businesses"[0m
+  ↳ app/controllers/businesses_controller.rb:6:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."business_id" = ?[0m  [["business_id", 1]]
+[active_model_serializers]   ↳ app/serializers/business_serializer.rb:10:in `reviews'
+[active_model_serializers]   [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/business_serializer.rb:13:in `block in reviews'
+[active_model_serializers]   [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/business_serializer.rb:13:in `block in reviews'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (257.14ms)
+Completed 200 OK in 460ms (Views: 443.7ms | ActiveRecord: 3.3ms | Allocations: 4315)
+
+
+Started GET "/businesses" for ::1 at 2020-05-16 23:50:13 -0400
+Processing by BusinessesController#index as */*
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  [1m[36mBusiness Load (0.8ms)[0m  [1m[34mSELECT "businesses".* FROM "businesses"[0m
+  ↳ app/controllers/businesses_controller.rb:6:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."business_id" = ?[0m  [["business_id", 1]]
+[active_model_serializers]   ↳ app/serializers/business_serializer.rb:10:in `reviews'
+[active_model_serializers]   [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/business_serializer.rb:13:in `block in reviews'
+[active_model_serializers]   [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/business_serializer.rb:13:in `block in reviews'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (285.05ms)
+Completed 200 OK in 501ms (Views: 492.9ms | ActiveRecord: 2.9ms | Allocations: 4313)
+
+
+Started GET "/businesses" for ::1 at 2020-05-16 23:50:20 -0400
+Processing by BusinessesController#index as */*
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  [1m[36mBusiness Load (0.1ms)[0m  [1m[34mSELECT "businesses".* FROM "businesses"[0m
+  ↳ app/controllers/businesses_controller.rb:6:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."business_id" = ?[0m  [["business_id", 1]]
+[active_model_serializers]   ↳ app/serializers/business_serializer.rb:10:in `reviews'
+[active_model_serializers]   [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/business_serializer.rb:13:in `block in reviews'
+[active_model_serializers]   [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/business_serializer.rb:13:in `block in reviews'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (15.39ms)
+Completed 200 OK in 32ms (Views: 28.8ms | ActiveRecord: 0.8ms | Allocations: 4312)
+
+

@@ -7,6 +7,8 @@ import  Home from "./main/Home.js"
 import  Login from "./main/Login.js"
 import  Show from "./main/Show.js"
 import  SignUp from "./main/SignUp.js"
+import  Review from "./main/Review.js"
+
 
 
 
@@ -40,6 +42,7 @@ render(){
       <Route exact path="/Login" render={() => <Login /> } />
       <Route exact path="/Show" render={() => <Show /> } />
       <Route exact path="/SignUp" render={() => <SignUp /> } />
+      <Route exact path="/Review" render={() => <Review /> } />
       </div>
     </Router>
   );
