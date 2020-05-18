@@ -1,5 +1,5 @@
 class BusinessSerializer < ActiveModel::Serializer
-  attributes :id, :name, :bio , :img_url , :reviews
+  attributes :id, :name, :bio , :img_url , :reviews, :avg_review
 
 
 

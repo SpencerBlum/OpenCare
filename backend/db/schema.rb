@@ -29,13 +29,14 @@ ActiveRecord::Schema.define(version: 2020_05_13_230225) do
   end
 
   create_table "businesses", force: :cascade do |t|
-    t.integer "user_id", null: false
+    t.integer "user_id"
     t.string "img_url"
     t.string "name"
     t.string "address"
     t.string "city"
     t.string "state"
     t.integer "zip_code"
+    t.float "avg_review"
     t.boolean "is_approved"
     t.string "bio"
     t.integer "review_count", default: 0
@@ -43,7 +44,6 @@ ActiveRecord::Schema.define(version: 2020_05_13_230225) do
     t.string "latitiude"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["user_id"], name: "index_businesses_on_user_id"
   end
 
   create_table "follows", force: :cascade do |t|
@@ -88,7 +88,6 @@ ActiveRecord::Schema.define(version: 2020_05_13_230225) do
   end
 
   add_foreign_key "business_attributes", "businesses"
-  add_foreign_key "businesses", "users"
   add_foreign_key "follows", "businesses"
   add_foreign_key "follows", "users"
   add_foreign_key "hours", "businesses"

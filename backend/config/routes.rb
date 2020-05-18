@@ -8,6 +8,6 @@ Rails.application.routes.draw do
   post '/login', to: 'users#login'
   post '/createAccount', to: 'users#create_account'
 
-  post "/review/new" , to: 'reviews#create_review'
+  post "/review/new" , to: 'businesses#create_review'
 
 end

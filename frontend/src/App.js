@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
 import './App.css';
+// import { Router } from "react-router-dom";
+
+
 
 import { connect } from 'react-redux'
 
@@ -36,7 +39,7 @@ class App extends Component {
 render(){
  
   return (
-    <Router>
+    <Router  >
       <div>
       <Route exact path="/" render={() => <Home /> } />
       <Route exact path="/Login" render={() => <Login /> } />
