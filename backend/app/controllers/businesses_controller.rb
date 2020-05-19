@@ -2,8 +2,6 @@ class BusinessesController < ApplicationController
 
     def index
         businesses = Business.all
-
-        byebug
         render json: businesses
     end
 

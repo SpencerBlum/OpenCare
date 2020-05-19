@@ -1,5 +1,5 @@
 class BusinessSerializer < ActiveModel::Serializer
-  attributes :id, :name, :bio , :img_url , :reviews, :avg_review
+  attributes :id, :name, :bio , :img_url , :reviews, :avg_review, :city, :traits
 
 
 
@@ -13,9 +13,15 @@ class BusinessSerializer < ActiveModel::Serializer
         user: User.find_by(id: review.user_id)
     }
     array.push(obj)
-   
     end
-     return array
+    return array
   end
+
+  def traits
+    traits = self.object.traits
+    return traits
+
+  end
+
 end
 

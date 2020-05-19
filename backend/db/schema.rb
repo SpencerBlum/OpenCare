@@ -10,22 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_05_13_230225) do
+ActiveRecord::Schema.define(version: 2020_05_18_204047) do
 
-  create_table "business_attributes", force: :cascade do |t|
-    t.integer "business_id", null: false
-    t.boolean "all_day", default: false
-    t.boolean "sleep_away", default: false
-    t.boolean "swimming", default: false
-    t.boolean "climbing", default: false
-    t.boolean "archery", default: false
-    t.boolean "arts_crafts", default: false
-    t.boolean "jewish", default: false
-    t.boolean "christian", default: false
-    t.boolean "muslim", default: false
+  create_table "business_traits", force: :cascade do |t|
+    t.integer "trait_id"
+    t.integer "business_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["business_id"], name: "index_business_attributes_on_business_id"
   end
 
   create_table "businesses", force: :cascade do |t|
@@ -44,6 +35,7 @@ ActiveRecord::Schema.define(version: 2020_05_13_230225) do
     t.string "latitiude"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_businesses_on_user_id"
   end
 
   create_table "follows", force: :cascade do |t|
@@ -76,6 +68,12 @@ ActiveRecord::Schema.define(version: 2020_05_13_230225) do
     t.index ["user_id"], name: "index_reviews_on_user_id"
   end
 
+  create_table "traits", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "first_name"
     t.string "last_name"
@@ -87,7 +85,6 @@ ActiveRecord::Schema.define(version: 2020_05_13_230225) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  add_foreign_key "business_attributes", "businesses"
   add_foreign_key "follows", "businesses"
   add_foreign_key "follows", "users"
   add_foreign_key "hours", "businesses"

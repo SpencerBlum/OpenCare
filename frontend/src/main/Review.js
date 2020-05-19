@@ -6,6 +6,7 @@ import { Redirect } from 'react-router-dom';
 import {newBusiness} from "../actions/reviews.js"
 
 
+
 class ReviewCard extends Component {
 
     state = {
@@ -22,7 +23,6 @@ class ReviewCard extends Component {
     handleChange = (e) => {
         this.setState({formValue: e.target.value})
     }
-
 
     handleSubmit= ()=> {
         if(this.state.formValue =="" || this.state.ratingValue =="" ){
@@ -73,7 +73,9 @@ class ReviewCard extends Component {
                     <div>
                         <Header/>
                         Write a Review 
-                        <br/>
+                        <div>
+
+                        </div>
                         <select onChange={this.handleRating} value = {this.state.ratingValue} >
                             <option value="1">1</option>
                             <option value="2">2</option>
@@ -81,6 +83,11 @@ class ReviewCard extends Component {
                             <option value="4">4</option>
                             <option value="5">5</option>
                         </select>
+
+
+
+                        <br/>
+                        
                         <br/>
                         <textarea onChange={(e) =>this.handleChange(e)}  rows="20" cols="60"  /> 
                         <br/>

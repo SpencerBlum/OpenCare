@@ -1,7 +1,8 @@
 class Business < ApplicationRecord
-  belongs_to :user
+  belongs_to :user, optional: true
 
-  has_many :business_attributes
+  has_many :business_traits
+  has_many :traits, through: :business_traits
 
   has_many :hours
 
