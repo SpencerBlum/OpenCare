@@ -55,9 +55,7 @@ class ReviewCard extends Component {
             .then(data => {
             console.log('Success:', data);
             this.props.newBusiness(data)
-            
             this.setState({redirectShow: true})
-        
             })
             .catch((error) => {
             console.error('Error:', error);

@@ -47,6 +47,7 @@ return(
 
     { currentUser? "" : <button  onClick={(e) => handleRoute(e)} name= "/Login"> Login </button>}
     { currentUser? "" : <button onClick={(e) => handleRoute(e)}  name="/Signup" > Signup  </button>}
+    { currentUser?  <button onClick={(e) => handleRoute(e)}  name="/Profile" > Profile  </button>  : ""}
     </div>
 )
 }

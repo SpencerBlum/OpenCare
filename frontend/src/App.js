@@ -12,6 +12,11 @@ import  Show from "./main/Show.js"
 import  SignUp from "./main/SignUp.js"
 import  Review from "./main/Review.js"
 
+import  Profile from "./main/Profile.js"
+import  ResetPassword from "./main/ResetPassword.js"
+import  EditInfo from "./main/EditInfo.js"
+
+
 import { BrowserRouter as Router, Route, Redirect } from 'react-router-dom';
 
 import { loadAllTraits } from './actions/filter.js'
@@ -40,9 +45,7 @@ this.props.loadAllTraits(data)
 .catch((error) => {
 console.error('Error:', error);
 });
-
   }
-
 
 
   renderBusinessesFilter = ()=> {
@@ -60,39 +63,7 @@ console.error('Error:', error);
         return el.city.toLowerCase().includes(this.props.currentLocationSearch.toLowerCase()) 
       })
     }
-/*
-    if(this.props.checkedTraits !== []){
-      this.props.checkedTraits.forEach(traitname => {
-        console.log(traitname)
-        console.log(array)
-        array = array.filter(business => {
-          console.log(business.traits)
-         if(business.traits){
-          //debugger
-          business.traits.forEach(trait => {
-          console.log(trait)
-          console.log(trait.name)
-          console.log(traitname)
-          console.log(trait.name.includes(traitname))
-          return trait.name.includes(traitname)
-         
-        
-        })
-        console.log(array)
-         }
-       })
-      })
-    }
-    */
-    /*
-    let checkedTraits = this.props.checkedTraits;
-    let retArray = [];
-   if(checkedTraits !== []){
-    checkedTraits.forEach(checkedTrait => {
-      array.filter
-    });
-   }
-   */
+
   if(this.props.checkedTraits.length > 0)
   {
     array = array.filter((business)=> {
@@ -131,13 +102,16 @@ render(){
   return (
 
     // { this.props.currentBusinessSearch !== ""?  this.renderBusinessesFilter() : null}
-    <Router  >
+    <Router >
       <div>
       <Route exact path="/" render={() => <Home  /> } />
       <Route exact path="/Login" render={() => <Login /> } />
       <Route exact path="/Show" render={() => <Show /> } />
       <Route exact path="/SignUp" render={() => <SignUp /> } />
       <Route exact path="/Review" render={() => <Review /> } />
+      <Route exact path="/profile" render={() => <Profile /> } />
+      <Route exact path="/Reset-Password" render={() => <ResetPassword /> } />
+      <Route exact path="/Edit-Info" render={() => <EditInfo /> } />
       </div>
     </Router>
   );

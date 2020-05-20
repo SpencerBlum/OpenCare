@@ -11,6 +11,19 @@ class UsersController < ApplicationController
     end
   end
 
+  def resetpassword
+    user = User.find_by(email: params["email"])
+    if user && user.authenticate(params["currentpassword"])
+      session[:user_id] = user.id
+      user.password = (params["newpassword"])
+      user.save
+      render json: user
+    else
+      render json: { error: "Invalid" }, status: :unauthorized
+    end
+  end
+
+
   def create_account
     user = User.find_by(email: params["email"])
     if (user != nil)
@@ -27,4 +40,7 @@ class UsersController < ApplicationController
   
     end
   end
+
+ 
+
 end
