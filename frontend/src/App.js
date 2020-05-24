@@ -15,6 +15,7 @@ import  Review from "./main/Review.js"
 import  Profile from "./main/Profile.js"
 import  ResetPassword from "./main/ResetPassword.js"
 import  EditInfo from "./main/EditInfo.js"
+import  CreateBusiness from "./main/CreateBusiness.js"
 
 
 import { BrowserRouter as Router, Route, Redirect } from 'react-router-dom';
@@ -112,6 +113,7 @@ render(){
       <Route exact path="/profile" render={() => <Profile /> } />
       <Route exact path="/Reset-Password" render={() => <ResetPassword /> } />
       <Route exact path="/Edit-Info" render={() => <EditInfo /> } />
+      <Route relative path="/business/form" render={() => <CreateBusiness /> } />
       </div>
     </Router>
   );

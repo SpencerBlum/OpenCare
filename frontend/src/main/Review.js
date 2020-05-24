@@ -5,6 +5,8 @@ import swal from 'sweetalert';
 import { Redirect } from 'react-router-dom';
 import {newBusiness} from "../actions/reviews.js"
 
+import { Rating } from 'semantic-ui-react'
+
 
 
 class ReviewCard extends Component {
@@ -17,11 +19,14 @@ class ReviewCard extends Component {
 
 
      handleRating = (e) => {
-        this.setState({ratingValue: e.target.value})
+        
+        this.setState({ratingValue: e.target.ariaPosInSet})
+
     }
 
     handleChange = (e) => {
         this.setState({formValue: e.target.value})
+
     }
 
     handleSubmit= ()=> {
@@ -72,15 +77,16 @@ class ReviewCard extends Component {
                         <Header/>
                         Write a Review 
                         <div>
-
+                        <Rating onRate={this.handleRating} maxRating={5} defaultRating={1} icon='star' size='huge' />
                         </div>
-                        <select onChange={this.handleRating} value = {this.state.ratingValue} >
+
+                        {/* <select onChange={this.handleRating} value = {this.state.ratingValue} >
                             <option value="1">1</option>
                             <option value="2">2</option>
                             <option value="3">3</option>
                             <option value="4">4</option>
                             <option value="5">5</option>
-                        </select>
+                        </select> */}
 
 
 

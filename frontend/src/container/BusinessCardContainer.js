@@ -11,11 +11,6 @@ const BusinessCardContainer = () => {
         }
     })
 
-
-   
-
-
-
     const renderCards = () =>{
         if(currentRenderedBusinesses !== []){
         return currentRenderedBusinesses.map(business => {

@@ -22,17 +22,21 @@ ActiveRecord::Schema.define(version: 2020_05_18_204047) do
   create_table "businesses", force: :cascade do |t|
     t.integer "user_id"
     t.string "img_url"
+    t.string "email"
     t.string "name"
     t.string "address"
     t.string "city"
     t.string "state"
+    t.string "website"
+    t.string "kid_count"
+    t.string "staff_count"
     t.integer "zip_code"
     t.float "avg_review"
     t.boolean "is_approved"
     t.string "bio"
     t.integer "review_count", default: 0
-    t.string "longitude"
-    t.string "latitiude"
+    t.float "longitude"
+    t.float "latitude"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["user_id"], name: "index_businesses_on_user_id"

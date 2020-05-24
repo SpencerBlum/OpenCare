@@ -41,6 +41,11 @@ class UsersController < ApplicationController
     end
   end
 
- 
-
+  def follow 
+    byebug
+    follow = Follow.new(user_id: params["userId"], business_id: params["id"] )
+    follow.save
+    user = User.find_by(id: params["id"])
+    render json: user
+  end
 end

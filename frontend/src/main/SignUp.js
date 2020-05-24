@@ -4,7 +4,6 @@ import { useDispatch } from 'react-redux'
 
 const SignUp = () => {
 
-
     const dispatch = useDispatch()
     const history = useHistory()
 
@@ -14,7 +13,7 @@ const SignUp = () => {
 
         if(e.target.email.value === ""){
             window.alert("Account must have a email")
-        } else if (e.target.password.value === "" || e.target.confirmPassword.value === "" ){
+        }else if (e.target.password.value === "" || e.target.confirmPassword.value === "" ){
             window.alert("Please Confirm Password")
         }else if  (e.target.password.value !== e.target.confirmPassword.value ){
             window.alert("Passwords must be the same")

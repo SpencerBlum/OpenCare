@@ -23,15 +23,13 @@ const handleRoute = (e) => {
 }
 
 const handleHeaderSubmit = (e) => {
-  e.preventDefault()
-  if(location.pathname !== "/"){
-    history.push("/")
-  }
-  dispatch(businessNameSearch(e.target.businessSearch.value))
-  dispatch(locationSearch(e.target.location.value))
-  
-
- }
+        e.preventDefault()
+        if(location.pathname !== "/"){
+            history.push("/")
+        }
+        dispatch(businessNameSearch(e.target.businessSearch.value))
+        dispatch(locationSearch(e.target.location.value))
+    }
 
 
 
@@ -48,6 +46,8 @@ return(
     { currentUser? "" : <button  onClick={(e) => handleRoute(e)} name= "/Login"> Login </button>}
     { currentUser? "" : <button onClick={(e) => handleRoute(e)}  name="/Signup" > Signup  </button>}
     { currentUser?  <button onClick={(e) => handleRoute(e)}  name="/Profile" > Profile  </button>  : ""}
+    {/* { currentUser?  <button onClick={(e) => handleRoute(e)}  name="/create-business" > Create Business  </button>  : ""} */}
+    <button onClick={(e) => handleRoute(e)}  name="/business/form/new" > Create Business  </button> 
     </div>
 )
 }

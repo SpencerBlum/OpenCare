@@ -6,7 +6,8 @@ const defaultState = {
     currentBusinessSearch: "",
     currentLocationSearch: "",
     allTraits: [],
-    checkedTraits: []
+    checkedTraits: [],
+    createOreEditsBiz: 'nil'
 
 
   }
