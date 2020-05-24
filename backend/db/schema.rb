@@ -12,6 +12,9 @@
 
 ActiveRecord::Schema.define(version: 2020_05_18_204047) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "business_traits", force: :cascade do |t|
     t.integer "trait_id"
     t.integer "business_id"
@@ -20,7 +23,7 @@ ActiveRecord::Schema.define(version: 2020_05_18_204047) do
   end
 
   create_table "businesses", force: :cascade do |t|
-    t.integer "user_id"
+    t.bigint "user_id"
     t.string "img_url"
     t.string "email"
     t.string "name"
@@ -43,8 +46,8 @@ ActiveRecord::Schema.define(version: 2020_05_18_204047) do
   end
 
   create_table "follows", force: :cascade do |t|
-    t.integer "user_id", null: false
-    t.integer "business_id", null: false
+    t.bigint "user_id", null: false
+    t.bigint "business_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["business_id"], name: "index_follows_on_business_id"
@@ -52,7 +55,7 @@ ActiveRecord::Schema.define(version: 2020_05_18_204047) do
   end
 
   create_table "hours", force: :cascade do |t|
-    t.integer "business_id", null: false
+    t.bigint "business_id", null: false
     t.string "day"
     t.string "open_time"
     t.string "close_time"
@@ -62,8 +65,8 @@ ActiveRecord::Schema.define(version: 2020_05_18_204047) do
   end
 
   create_table "reviews", force: :cascade do |t|
-    t.integer "user_id", null: false
-    t.integer "business_id", null: false
+    t.bigint "user_id", null: false
+    t.bigint "business_id", null: false
     t.string "message"
     t.integer "rating"
     t.datetime "created_at", precision: 6, null: false

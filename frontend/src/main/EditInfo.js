@@ -27,12 +27,18 @@ return(
         <form onSubmit= {(e)=> handleSubmit(e)} >
         <label> first Name: </label>
         <br/>
-        <input type= "text" name = "firstname" /> 
+        <input type= "text" name = "first_name" /> 
         <br/>
         <br/>
+        <label> Last Name </label>
+        <br/>
+        <input type= "text" name = "last_name"/> 
+        <br/>
+        <br/>
+
         <label> LastName </label>
         <br/>
-        <input type= "text" name = "newpassword"/> 
+        <input type= "text" name = "img"/> 
         <br/>
         <br/>
         <input type= "submit" value="Submit" />
