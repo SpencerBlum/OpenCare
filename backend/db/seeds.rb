@@ -53,10 +53,119 @@ b1 = Business.create(
     bio: "At URJ Camp Newman, we’re building a foundation for a vibrant Jewish life. Guided by experienced staff and Jewish professionals, we offer 25 traditional and specialty overnight summer sessions from 1 to 8 weeks at the beautiful bay-side campus of Cal Maritime – with outdoor adventure at our Porter Creek home! Our camp empowers children and teens to better themselves, their communities and the world."
 )
 
+
+b2 = Business.create(
+    user_id: user1.id,
+    img_url: "https://www.pressdemocrat.com/csp/mediapool/sites/dt.common.streams.StreamServer.cls?STREAMOID=zDPjXvg_28mtCGWAyRRwBc$daE2N3K4ZzOUsqbU5sYtATCRnSFCvkAoTCu2m3KzsWCsjLu883Ygn4B49Lvm9bPe2QeMKQdVeZmXF$9l$4uCZ8QDXhaHEp3rvzXRJFdy0KqPHLoMevcTLo3h8xh70Y6N_U_CryOsw6FTOdKL_jpQ-&CONTENTTYPE=image/jpeg",
+    name: "Zoeys Daycare",
+    address: "120 Cannon Street charleston sc",
+    city: "Charleston",
+    state: "South Carolina",
+    zip_code: 95404,
+    is_approved: true,
+    bio: "At URJ Camp Newman, we’re building a foundation for a vibrant Jewish life. Guided by experienced staff and Jewish professionals, we offer 25 traditional and specialty overnight summer sessions from 1 to 8 weeks at the beautiful bay-side campus of Cal Maritime – with outdoor adventure at our Porter Creek home! Our camp empowers children and teens to better themselves, their communities and the world."
+)
+
+b3 = Business.create(
+
+    user_id: user1.id,
+    img_url: "https://www.pressdemocrat.com/csp/mediapool/sites/dt.common.streams.StreamServer.cls?STREAMOID=zDPjXvg_28mtCGWAyRRwBc$daE2N3K4ZzOUsqbU5sYtATCRnSFCvkAoTCu2m3KzsWCsjLu883Ygn4B49Lvm9bPe2QeMKQdVeZmXF$9l$4uCZ8QDXhaHEp3rvzXRJFdy0KqPHLoMevcTLo3h8xh70Y6N_U_CryOsw6FTOdKL_jpQ-&CONTENTTYPE=image/jpeg",
+    name: "Happy Kids",
+    address: "28 woolfe Cannon Street charleston SC 29403",
+    city: "Charleston",
+    state: "South Carolina",
+    zip_code: 95404,
+    is_approved: true,
+    bio: "At URJ Camp Newman, we’re building a foundation for a vibrant Jewish life. Guided by experienced staff and Jewish professionals, we offer 25 traditional and specialty overnight summer sessions from 1 to 8 weeks at the beautiful bay-side campus of Cal Maritime – with outdoor adventure at our Porter Creek home! Our camp empowers children and teens to better themselves, their communities and the world."
+)
+
+b4 = Business.create(
+
+   
+    img_url: "https://www.pressdemocrat.com/csp/mediapool/sites/dt.common.streams.StreamServer.cls?STREAMOID=zDPjXvg_28mtCGWAyRRwBc$daE2N3K4ZzOUsqbU5sYtATCRnSFCvkAoTCu2m3KzsWCsjLu883Ygn4B49Lvm9bPe2QeMKQdVeZmXF$9l$4uCZ8QDXhaHEp3rvzXRJFdy0KqPHLoMevcTLo3h8xh70Y6N_U_CryOsw6FTOdKL_jpQ-&CONTENTTYPE=image/jpeg",
+    name: "Camp Kessam",
+    address: "40 pit Street charleston sc 29402",
+    city: "Charleston",
+    state: "South Carolina",
+    zip_code: 95404,
+    is_approved: true,
+    bio: "At URJ Camp Newman, we’re building a foundation for a vibrant Jewish life. Guided by experienced staff and Jewish professionals, we offer 25 traditional and specialty overnight summer sessions from 1 to 8 weeks at the beautiful bay-side campus of Cal Maritime – with outdoor adventure at our Porter Creek home! Our camp empowers children and teens to better themselves, their communities and the world."
+)
+puts ("Created Businesses")
+
+attribute1 = Trait.create(
+    name: "swimming",
+)
+
+
+
+attribute2 = Trait.create(
+    name: "sailing",
+)
+
+attribute3 = Trait.create(
+    name: "basketball",
+)
+
+
+attribute4 = Trait.create(
+    name: "soccer",
+)
+
+attribute5 = Trait.create(
+    name: "surfing",
+)
+
+BusinessTrait.create(
+    business_id: b1.id,
+    trait_id: attribute1.id
+)
+
+BusinessTrait.create(
+    business_id: b1.id,
+    trait_id: attribute5.id
+)
+
+BusinessTrait.create(
+    business_id: b2.id,
+    trait_id: attribute4.id
+)
+BusinessTrait.create(
+    business_id: b2.id,
+    trait_id: attribute5.id
+)
+
+
+BusinessTrait.create(
+    business_id: b3.id,
+    trait_id: attribute4.id
+)
+BusinessTrait.create(
+    business_id: b3.id,
+    trait_id: attribute5.id
+)
+
+
+BusinessTrait.create(
+    business_id: b4.id,
+    trait_id: attribute2.id
+)
+
+BusinessTrait.create(
+    business_id: b4.id,
+    trait_id: attribute3.id
+)
+
+BusinessTrait.create(
+    business_id: b4.id,
+    trait_id: attribute1.id
+)
+
 review1 = Review.create(
     user_id: user1.id,
     business_id: b1.id,
-    message: "Love this camp so much"
+    message: "Love this camp so much",
+    rating: 5
 
 )
 
@@ -67,10 +176,6 @@ review2 = Review.create(
     rating: 5
 )
 
-attributes1 = BusinessAttribute.create(
-    all_day: true,
-    business_id: b1.id
-)
 
 monday = Hour.create(
     business_id: b1.id,
@@ -93,7 +198,7 @@ follow1 = Follow.create(
 
 
 
-puts "Dirty"
+puts "Done"
 
 
 

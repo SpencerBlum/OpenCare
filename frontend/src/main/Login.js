@@ -41,7 +41,7 @@ const handleSubmit = (e) => {
         } else {
             window.alert("Wrong Password")
         }
-        
+
         })
         .catch((error) => {
         console.error('Error:', error);
@@ -61,7 +61,7 @@ return(
         <form onSubmit= {(e)=> handleSubmit(e)} >
         <label> Email: </label>
         <br/>
-        <input type= "text" name = "email" /> 
+         <input type= "text" name = "email" /> 
         <br/>
         <br/>
         <label> Password: </label>

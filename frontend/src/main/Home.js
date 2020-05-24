@@ -2,12 +2,12 @@ import React from 'react';
 import Header from '../component/Header.js'
 import HomeBody from '../container/HomeBody.js'
 
-const Home = () => {
+const Home = (props) => {
 
 return(
     <div>
-    <Header/>
-    
+    <Header />
+
     <HomeBody/>
 
     </div>

@@ -5,26 +5,25 @@ import { useSelector} from 'react-redux'
 const BusinessCardContainer = () => {
 
 
-    const {allBusinesses} = useSelector(state => {
+    const {currentRenderedBusinesses} = useSelector(state => {
         return {
-            allBusinesses: state.allBusinesses
+            currentRenderedBusinesses: state.currentRenderedBusinesses
         }
     })
 
     const renderCards = () =>{
-        console.log("happy")
-        if(allBusinesses !== {}){
-        return allBusinesses.map(business => {
+        if(currentRenderedBusinesses !== []){
+        return currentRenderedBusinesses.map(business => {
         return    <BusinessCard key = {business.id} business= {business}/>
         }) 
     } 
-    console.log(allBusinesses)
+    
         }
 
 return(
     <div className = "businesscard-container" >
     Card Container
-
+    
     {renderCards()}
     {/* {allBusinesses.map(business => <BusinessCard key = {business.id} business= {business} />)} */}
     

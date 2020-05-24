@@ -1,7 +1,15 @@
 const defaultState = {
     allBusinesses: [],
+    currentRenderedBusinesses: [],
     currentBusiness: null,
-    currentUser: {}
+    currentUser: null,
+    currentBusinessSearch: "",
+    currentLocationSearch: "",
+    allTraits: [],
+    checkedTraits: [],
+    createOreEditsBiz: 'nil'
+
+
   }
 
 
@@ -19,8 +27,25 @@ const defaultState = {
       case "ADD_CURRENT_USER": {
         return {...state, currentUser: action.payload}
       }
+      case "ADD_BUSINESS_NAME_SEARCH": {
+        return {...state, currentBusinessSearch: action.payload}
+      }
+      case "ADD_LOCATION_SEARCH": {
+        return {...state, currentLocationSearch: action.payload}
+      }
+      case "RENDER_BUSINESSES": {
+        return {...state, currentRenderedBusinesses: action.payload}
+      } 
+      case "ADD_ALL_TRAITS": {
+        return {...state, allTraits: action.payload}
+      } 
+      case "ADD_AND_DELETE_TRAIT": {
+        console.log(action.payload)
+        return {...state, checkedTraits: action.payload}
+      } 
       default:
         return state
     }
   }
+
 

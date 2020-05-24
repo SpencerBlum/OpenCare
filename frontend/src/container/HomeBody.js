@@ -2,6 +2,8 @@ import React from 'react';
 import FilterContainer from './FilterContainer'
 import BusinessCardContainer from './BusinessCardContainer.js'
 
+import GoogleMap from '../component/GoogleMap.js'
+
 const HomeBody = () => {
 
 return(
@@ -9,8 +11,7 @@ return(
     
     <FilterContainer/>
     <BusinessCardContainer/>
-
-
+    <GoogleMap/>
     </div>
 )
 }
