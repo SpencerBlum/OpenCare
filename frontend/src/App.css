@@ -136,11 +136,18 @@ You can just do it like this:
 
 #content {
     position: relative;
-}
-.setpin{
-    position: absolute;
+    /* height: 20px; */
     top: 0px;
     left: 0px;
+
+
+}
+
+.setpin{
+    position: relative;
+    top: -40px;
+    left: -14px;
+    height: 40px;
 }
 
 

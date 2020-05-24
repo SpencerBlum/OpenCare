@@ -5,13 +5,13 @@ import Geocode from "react-geocode";
 import { connect } from 'react-redux'
 
 
-const AnyReactComponent = ({ text }) => {
+const Marker = ({ text }) => {
 
     const GOOGLE_API_KEY = `${process.env.REACT_APP_GOOGLE_MAP_KEY}`
 return (
-<div id= "content"> 
+<div id= "content" > 
 
-<img className="setpin" src={require("../images/mappin.png")}  alt=" pin" width="30px" />
+<img className="setpin" src={require("../images/mappin.png")}  alt=" pin"  />
     <h4 className="setpin" >{text}</h4>
 </div>)}
 
@@ -60,8 +60,7 @@ class GoogleMap extends Component {
   renderPins = () => {
     if(this.props.currentRenderedBusinesses.length > 0){
    return  this.props.currentRenderedBusinesses.map( business => {
-        console.log(business)
-        return <AnyReactComponent lat={business.latitude} key = {business.id} lng={business.longitude} text="" />
+        return <Marker  lat={business.latitude} key = {business.id} lng={business.longitude} text="" />
     })
     }
 

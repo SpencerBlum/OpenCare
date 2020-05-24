@@ -22,7 +22,10 @@ class BusinessesController < ApplicationController
     end
 
     def create
+        address = "#{params["address"]}"
+        byebug
         business = Business.new(name: params["name"], bio: params['bio'], img_url: params["img_url"], email: params["email"], website: params["website"], address: params["address"], city: params["city"], state: params["state"], zip_code: params["zip"] )
+       
         if business.valid?
         business.save
         allBiz = Business.all
