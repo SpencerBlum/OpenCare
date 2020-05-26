@@ -19,7 +19,7 @@ const handleCardClick = () => {
 console.log("card clicked")
 dispatch({type: "ADD_CURRENT_BUSINESS", payload: props.business})
 if (currentBusiness !== {}){
-    history.push('/show')
+    history.push(`/show/${props.business.name}/${props.business.id}`)
 }
 
 }

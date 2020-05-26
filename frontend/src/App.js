@@ -107,9 +107,9 @@ render(){
       <div>
       <Route exact path="/" render={() => <Home  /> } />
       <Route exact path="/Login" render={() => <Login /> } />
-      <Route exact path="/Show" render={() => <Show /> } />
+      <Route relative path="/Show" render={() => <Show /> } />
       <Route exact path="/SignUp" render={() => <SignUp /> } />
-      <Route exact path="/Review" render={() => <Review /> } />
+      <Route relative path="/Review" render={() => <Review /> } />
       <Route exact path="/profile" render={() => <Profile /> } />
       <Route exact path="/Reset-Password" render={() => <ResetPassword /> } />
       <Route exact path="/Edit-Info" render={() => <EditInfo /> } />

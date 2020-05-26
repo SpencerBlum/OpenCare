@@ -18,6 +18,25 @@ class ReviewCard extends Component {
      }
 
 
+     getBusinessFromWindow = () => {
+        console.log(window.location.pathname)
+
+       let currentPath = window.location.pathname 
+       let pathArray = currentPath.split("/")
+       let businessId = pathArray[pathArray.length-1]
+ 
+       fetch(`http://localhost:3000/business/${businessId}`)
+        .then(response => response.json())
+        .then(data => {console.log(data)
+            this.props.newBusiness(data)
+
+        }
+        );
+
+
+    }
+
+
      handleRating = (e) => {
         
         this.setState({ratingValue: e.target.ariaPosInSet})

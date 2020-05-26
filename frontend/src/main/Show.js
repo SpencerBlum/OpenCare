@@ -4,10 +4,34 @@ import ReviewCard from '../component/ReviewCard.js'
 import Header from '../component/Header.js'
 import { NavLink } from 'react-router-dom';
 import { loadBusinesses } from "../actions/Business.js";
+import { loadCurrentUser } from "../actions/User.js";
+import { newBusiness } from "../actions/reviews.js";
+
+import swal from 'sweetalert';
+import { Rating } from 'semantic-ui-react'
+
 
 
 class Show extends Component {
 
+
+    getBusinessFromWindow = () => {
+        console.log(window.location.pathname)
+
+       let currentPath = window.location.pathname 
+       let pathArray = currentPath.split("/")
+       let businessId = pathArray[pathArray.length-1]
+ 
+       fetch(`http://localhost:3000/business/${businessId}`)
+        .then(response => response.json())
+        .then(data => {console.log(data)
+            this.props.newBusiness(data)
+
+        }
+        );
+
+
+    }
 
     
     renderReviews = () => {
@@ -41,18 +65,12 @@ class Show extends Component {
         .then(data => {
         console.log('Success:', data);
         this.props.loadBusinesses(data)
-        // if (data.error !== "Invalid username or password"){
-        // dispatch({type: "ADD_CURRENT_USER", payload: data})
-        // history.push('/')
-        // } else {
-        //     window.alert("Wrong Password")
-        // }
 
         })
         .catch((error) => {
         console.error('Error:', error);
         });
-    }
+    } 
         
     }
 
@@ -75,48 +93,66 @@ class Show extends Component {
             .then(response => response.json())
             .then(data => {
             console.log('Success:', data);
-            // this.props.loadBusinesses(data)
-            // if (data.error !== "Invalid username or password"){
-            // dispatch({type: "ADD_CURRENT_USER", payload: data})
-            // history.push('/')
-            // } else {
-            //     window.alert("Wrong Password")
-            // }
+            this.props.loadCurrentUser(data)
     
             })
             .catch((error) => {
             console.error('Error:', error);
             });
+    } else {
+        swal({ 
+            text: "You Must be Loggedin to follow a business",
+            icon: "warning"
+    })
     }
 }
 
-    renderFollowBtn = () => {
-        if(this.props.currentUser !== null){
-         let followsBiz = this.props.currentUser.follows.filter(follow => {return follow.id === this.props.currentUser })
-
-         if (followsBiz == false) {
-             return  <button onClick={this.handleFollow} > Follow </button> 
-         } 
-        } else { 
-            return  <button onClick={this.handleFollow} > unlogged in Follow </button>
-       }
-    }
+renderFollowBtn = () => {
+    if(this.props.currentUser !== null) {
+       let follows =  this.props.currentUser.follows.map(follow => { return follow.business_id })
+        if (!follows.includes(this.props.currentBusiness.id)) {
+            return  <button onClick={this.handleFollow} > Follow </button> 
+        }  else if (follows.includes(this.props.currentBusiness.id)) {
+            return  <button onClick={this.handleFollow} > Unfollowed </button> 
+        }
+    } else { 
+        return  <button onClick={this.handleFollow} > Follow </button>
+   }
+}
 
     
-
+        
+renderClaimBusinessButton = () => {
+     if( this.props.currentBusiness){
+         if(this.props.currentBusiness.user_id == null && this.props.currentUser) 
+            return  <button onClick = {this.handleClaim} > Claim business </button> 
+     }
+    }
+    
+    
+    componentDidMount(){
+        this.getBusinessFromWindow()
+        
+    }
 
     render(){
+       
 return(
     <div>
     <Header/>
     <br/>
-   { this.props.currentBusiness.user_id == "nil" && this.props.currentUser? <button onClick = {this.handleClaim} > Claim business </button> : null}
+    {this.renderClaimBusinessButton()}
+   {/* { this.props.currentBusiness.user_id == "nil" && this.props.currentUser? <button onClick = {this.handleClaim} > Claim business </button> : null} */}
     <br/>
     <br/>
     { this.props.currentBusiness? <img src= { this.props.currentBusiness.img_url } width = "200px" /> : null}
     
+   
     { this.props.currentBusiness?  <h2> { this.props.currentBusiness.name } </h2> : null}
-    { this.props.currentBusiness?  <h3> { this.props.currentBusiness.avg_review} Stars </h3> : null}
+
+    { this.props.currentBusiness? <> <Rating maxRating={5} defaultRating={Math.floor(this.props.currentBusiness.avg_review)} icon='star' size='massive' disabled />   <label> { this.props.currentBusiness.avg_review} Stars </label> </>: null}
+
+    {/* { this.props.currentBusiness?  <h3> { this.props.currentBusiness.avg_review} Stars </h3> : null} */}
     { this.props.currentBusiness? <h5> { this.props.currentBusiness.address } </h5> : null}
     { this.props.currentBusiness? <h4> { this.props.currentBusiness.bio } </h4> : null}
   
@@ -124,14 +160,11 @@ return(
 
     
     <br/>
-    <NavLink to="/Review" exact>   <button href= "http://localhost:3001/Show"> Write Review </button> </NavLink>
+    {this.props.currentBusiness? <NavLink to={`/Review/${this.props.currentBusiness.name}/${this.props.currentBusiness.id}`} exact>   <button href= "http://localhost:3001/Show"> Write Review </button> </NavLink> : null }
     {/* <button onClick={this.handleFollow()} > Follow </button> */}
-
     {this.renderFollowBtn()}
     <h4> Reviews </h4>
-
     {this.props.currentBusiness && this.renderReviews() } 
-
     </div>
 )
 }
@@ -142,14 +175,15 @@ const mapStateToProps = state =>  {
         currentBusiness: state.currentBusiness,
         currentReviews: state.currentReviews,
         currentUser: state.currentUser
-    
+        
     }
 }
 
 const mapDispatchToProps = dispatch => {
     return {
     loadBusinesses: (businesses) => dispatch(loadBusinesses(businesses)),
-
+    loadCurrentUser: (user) => dispatch(loadCurrentUser(user)),
+    newBusiness: (business) => dispatch(newBusiness(business)),
     }
   }
 
