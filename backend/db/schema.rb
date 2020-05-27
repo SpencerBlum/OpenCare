@@ -84,6 +84,9 @@ ActiveRecord::Schema.define(version: 2020_05_18_204047) do
     t.string "email"
     t.string "img_url"
     t.string "password_digest"
+    t.string "zip_code"
+    t.float "latitude"
+    t.float "longitude"
     t.boolean "is_business"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false

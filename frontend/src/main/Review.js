@@ -89,7 +89,7 @@ class ReviewCard extends Component {
 
     render(){
          if (this.state.redirectShow === true) {
-                return <Redirect to='/Show' />
+                return <Redirect to={`/Show/${this.props.currentBusiness.name}/${this.props.currentBusiness.id}`} />
             } else {
                 return(
                     <div>

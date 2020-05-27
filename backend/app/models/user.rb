@@ -11,4 +11,7 @@ class User < ApplicationRecord
     has_many :businesses, through: :reviews
 
     validates :email, presence: true, uniqueness: true
+
+    geocoded_by :zip_code
+  after_validation :geocode, :if => :zip_code_changed?
 end
