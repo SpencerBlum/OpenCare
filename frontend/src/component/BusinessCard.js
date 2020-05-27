@@ -3,6 +3,7 @@ import React from 'react';
 
 import { useHistory } from "react-router-dom";
 import { useSelector, useDispatch } from 'react-redux'
+import { Rating } from 'semantic-ui-react'
 
 const BusinessCard = (props) => {
 
@@ -13,13 +14,11 @@ const BusinessCard = (props) => {
         return {currentBusiness: state.currentBusiness }
     })
 
-
-
 const handleCardClick = () => {
 console.log("card clicked")
 dispatch({type: "ADD_CURRENT_BUSINESS", payload: props.business})
 if (currentBusiness !== {}){
-    history.push('/show')
+    history.push(`/show/${props.business.name}/${props.business.id}`)
 }
 
 }
@@ -34,6 +33,8 @@ return(
     </div>
     <div className="card-content">
     <p> {props.business.name} </p>
+
+    <Rating maxRating={5} defaultRating={Math.floor(props.business.avg_review)} icon='star' size='massive' disabled />   <label> { props.business.avg_review} Stars </label> 
 
     <label> Description:</label>
     <p> {props.business.bio}  </p>

@@ -17,7 +17,8 @@ last_name: "blam",
 email: "spencer@gmail.com",
 is_business: true,
 img_url: "https://likewise-stage.azureedge.net/uploads/3eb6cf23-895b-45e9-b92c-5fb1b457dd04/bill-gates-profile-pic.jpg",
-password_digest: BCrypt::Password.create("123")
+password_digest: BCrypt::Password.create("123"),
+zip_code: "29403"
 )
 
 user2 = User.create(

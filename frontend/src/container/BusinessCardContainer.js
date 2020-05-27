@@ -14,7 +14,7 @@ const BusinessCardContainer = () => {
     const renderCards = () =>{
         if(currentRenderedBusinesses !== []){
         return currentRenderedBusinesses.map(business => {
-        return    <BusinessCard key = {business.id} business= {business}/>
+        return  <BusinessCard key = {business.id} business= {business}/>
         }) 
     } 
     

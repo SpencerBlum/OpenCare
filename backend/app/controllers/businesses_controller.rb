@@ -22,8 +22,9 @@ class BusinessesController < ApplicationController
     end
 
     def create
-        address = "#{params["address"]}"
-        byebug
+        # address = "#{params["address"]}"
+    
+      
         business = Business.new(name: params["name"], bio: params['bio'], img_url: params["img_url"], email: params["email"], website: params["website"], address: params["address"], city: params["city"], state: params["state"], zip_code: params["zip"] )
        
         if business.valid?
@@ -43,5 +44,24 @@ class BusinessesController < ApplicationController
         render json: allBiz 
         end
     end
+
+    def show
+      
+        business = Business.find_by(id: params['id'])
+        render json: business 
+    end
+
+    # def updatebiz
+    #     business = Business.find_by(id: params['id'])
+    #     business = Business.update(name: params["name"], bio: params['bio'], img_url: params["img_url"], email: params["email"], website: params["website"], address: params["address"], city: params["city"], state: params["state"], zip_code: params["zip"] )
+
+    #     if business.valid?
+    #     business.save
+    #     allBiz = Business.all
+    #     render json: allBiz 
+    #     else
+    #         render json: { error: "Invalid" }, status: :unauthorized
+    #     end
+    # end
     
 end

@@ -41,11 +41,26 @@ class UsersController < ApplicationController
     end
   end
 
+  def edit_profile
+    user = User.find_by(id: params["id"])
+
+    user.update()
+  end
+
+
   def follow 
-    byebug
-    follow = Follow.new(user_id: params["userId"], business_id: params["id"] )
+    doesfollow = Follow.find_by(user_id: params["userId"], business_id: params["id"]) 
+    if (doesfollow === nil)
+      follow = Follow.new(user_id: params["userId"], business_id: params["id"] )
     follow.save
     user = User.find_by(id: params["id"])
     render json: user
+    else 
+    doesfollow.destroy
+    doesfollow.save
+    user = User.find_by(id: params["id"])
+    render json: user
+    end
   end
+
 end
