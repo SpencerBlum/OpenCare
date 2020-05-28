@@ -32,7 +32,9 @@ return(
     <img  src= {props.business.img_url} width = "200px" />
     </div>
     <div className="card-content">
-    <p> {props.business.name} </p>
+    <h3> {props.business.name} </h3>
+
+    <h5> {props.business.address} </h5>
 
     <Rating maxRating={5} defaultRating={Math.floor(props.business.avg_review)} icon='star' size='massive' disabled />   <label> { props.business.avg_review} Stars </label> 
 

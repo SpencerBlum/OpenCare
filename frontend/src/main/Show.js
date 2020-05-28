@@ -12,6 +12,8 @@ import { Rating } from 'semantic-ui-react'
 
 
 
+
+
 class Show extends Component {
 
 
@@ -111,12 +113,12 @@ renderFollowBtn = () => {
     if(this.props.currentUser !== null) {
        let follows =  this.props.currentUser.follows.map(follow => { return follow.business_id })
         if (!follows.includes(this.props.currentBusiness.id)) {
-            return  <button onClick={this.handleFollow} > Follow </button> 
+            return  <button className="buttonMain2" onClick={this.handleFollow} > Follow </button> 
         }  else if (follows.includes(this.props.currentBusiness.id)) {
-            return  <button onClick={this.handleFollow} > Unfollowed </button> 
+            return  <button className="buttonMain2" onClick={this.handleFollow} > Unfollowed </button> 
         }
     } else { 
-        return  <button onClick={this.handleFollow} > Follow </button>
+        return  <button className="buttonMain2" onClick={this.handleFollow} > Follow </button>
    }
 }
 
@@ -125,7 +127,7 @@ renderFollowBtn = () => {
 renderClaimBusinessButton = () => {
      if( this.props.currentBusiness){
          if(this.props.currentBusiness.user_id == null && this.props.currentUser) 
-            return  <button onClick = {this.handleClaim} > Claim business </button> 
+            return  <button className= "buttonMain2" onClick = {this.handleClaim} > Claim business </button> 
      }
     }
     
@@ -138,9 +140,10 @@ renderClaimBusinessButton = () => {
     render(){
        
 return(
-    <div>
+    <div >
     <Header/>
     <br/>
+    <div class="show-container">
     {this.renderClaimBusinessButton()}
    {/* { this.props.currentBusiness.user_id == "nil" && this.props.currentUser? <button onClick = {this.handleClaim} > Claim business </button> : null} */}
     <br/>
@@ -160,11 +163,12 @@ return(
 
     
     <br/>
-    {this.props.currentBusiness? <NavLink to={`/Review/${this.props.currentBusiness.name}/${this.props.currentBusiness.id}`} exact>   <button href= "http://localhost:3001/Show"> Write Review </button> </NavLink> : null }
+    {this.props.currentBusiness? <NavLink to={`/Review/${this.props.currentBusiness.name}/${this.props.currentBusiness.id}`} exact>   <button className="buttonMain" href= "http://localhost:3001/Show"> Write Review </button> </NavLink> : null }
     {/* <button onClick={this.handleFollow()} > Follow </button> */}
     {this.renderFollowBtn()}
     <h4> Reviews </h4>
     {this.props.currentBusiness && this.renderReviews() } 
+    </div>
     </div>
 )
 }

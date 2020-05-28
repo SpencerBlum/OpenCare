@@ -92,9 +92,11 @@ class ReviewCard extends Component {
                 return <Redirect to={`/Show/${this.props.currentBusiness.name}/${this.props.currentBusiness.id}`} />
             } else {
                 return(
-                    <div>
+                    <div >
                         <Header/>
                         Write a Review 
+                        
+                        <div className="show-container">
                         <div>
                         <Rating onRate={this.handleRating} maxRating={5} defaultRating={1} icon='star' size='huge' />
                         </div>
@@ -111,11 +113,11 @@ class ReviewCard extends Component {
 
                         <br/>
                         
+                      
+                        <textarea className="formInput" onChange={(e) =>this.handleChange(e)}  rows="20" cols="60"  /> 
                         <br/>
-                        <textarea onChange={(e) =>this.handleChange(e)}  rows="20" cols="60"  /> 
-                        <br/>
-                        <button onClick={this.handleSubmit} > Submit </button> 
-
+                        <button className="buttonMain" onClick={this.handleSubmit} > Submit </button> 
+                        </div>
                     </div>
                 )
             }

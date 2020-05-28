@@ -314,3 +314,7 @@ You can just do it like this:
   filter: grayscale(100%);
 
 }
+
+.show-container{
+  padding-left: 15px;
+}
