@@ -16,14 +16,17 @@ import  Profile from "./main/Profile.js"
 import  ResetPassword from "./main/ResetPassword.js"
 import  EditInfo from "./main/EditInfo.js"
 import  CreateBusiness from "./main/CreateBusiness.js"
-
+import Geocode from "react-geocode";
 
 import { BrowserRouter as Router, Route, Redirect } from 'react-router-dom';
 
 import { loadAllTraits } from './actions/filter.js'
+import { loadLat, loadLong} from "./actions/map.js"
 
+const GOOGLE_API_KEY = `${process.env.REACT_APP_GOOGLE_MAP_KEY}`
 class App extends Component {
 
+  
   componentDidMount(){
 
 fetch('http://localhost:3000/businesses')
@@ -34,18 +37,17 @@ fetch('http://localhost:3000/businesses')
 })
 .catch((error) => {
   console.error('Error:', error);
-
 })
 
-fetch('http://localhost:3000/traits')
-.then(response => response.json())
-.then(data => {
-console.log('Success:', data);
-this.props.loadAllTraits(data)
-})
-.catch((error) => {
-console.error('Error:', error);
-});
+  fetch('http://localhost:3000/traits')
+  .then(response => response.json())
+  .then(data => {
+  console.log('Success:', data);
+  this.props.loadAllTraits(data)
+  })
+  .catch((error) => {
+  console.error('Error:', error);
+  });
   }
 
 
@@ -61,7 +63,7 @@ console.error('Error:', error);
 
     if(this.props.currentLocationSearch !== ""){
       array =  array.filter(el => { 
-        return el.city.toLowerCase().includes(this.props.currentLocationSearch.toLowerCase()) 
+        return el.fulladdress.toLowerCase().includes(this.props.currentLocationSearch.toLowerCase()) 
       })
     }
 
@@ -88,13 +90,48 @@ console.error('Error:', error);
       }
     
 
-      return retVal;
-    })
-  }
+        return retVal;
+      })
+    }
+    if(array.length > 0){
+      console.log("happy")
+    this.dispatchCurrentMapLocation(array[0].fulladdress)
+    }
     this.props.renderBusinessCards(array)
   }
 
 
+  getLatLng = (address) => {
+    // set Google Maps Geocoding API for purposes of quota management. Its optional but recommended.
+    Geocode.setApiKey(GOOGLE_API_KEY);
+    // set response language. Defaults to english.
+    Geocode.setLanguage("en");
+    // set response region. Its optional.
+    // A Geocoding request with region=es (Spain) will return the Spanish city.
+    Geocode.setRegion("es");
+    // Enable or disable logs. Its optional.
+    Geocode.enableDebug();
+
+    Geocode.fromAddress(address).then(
+    response => {
+        const { lat, lng } = response.results[0].geometry.location;
+        console.log("kljhslfkjh")
+        console.log(lat, lng)
+        this.props.loadLat(lat)
+        this.props.loadLong(lng)
+        
+    },
+    error => {
+        console.error(error);
+    })
+}
+
+ dispatchCurrentMapLocation = (newA)=> {
+        
+  let address = newA
+  this.getLatLng(address) 
+  
+}
 
 render(){
 
@@ -137,6 +174,8 @@ const mapDispatchToProps = dispatch => {
     businessNameSearch: (name) => dispatch(businessNameSearch(name)),
     locationSearch: (location) => dispatch(locationSearch(location)),
     loadAllTraits: (traits) => dispatch(loadAllTraits(traits)),
+    loadLat: (lat) => dispatch(loadLat(lat)),
+    loadLong: (long) => dispatch(loadLong(long))
     
   }
 }

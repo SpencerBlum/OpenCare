@@ -55,29 +55,33 @@ const handleCreateAccount = ()=> {
 
 return(
 
-    <div>
-        <div>
-        <h1> Login component</h1>
+    <div className = "loginContainer">
+        <div className= " loginForm">
+        <img className="logo"  src={require("../images/opencare.png")}  alt=" pin"  />
+        <br/>
+        <h2 className= "headerLabel"> Login</h2>
         <form onSubmit= {(e)=> handleSubmit(e)} >
-        <label> Email: </label>
+        <label> Email </label>
         <br/>
-         <input type= "text" name = "email" /> 
-        <br/>
-        <br/>
-        <label> Password: </label>
-        <br/>
-        <input type= "text" name = "password"/> 
+         <input className = "formInput" type= "text" name = "email" /> 
         <br/>
         <br/>
-        <input type= "submit" value="Submit" />
+        <label> Password </label>
+        <br/>
+        <input className = "formInput" type= "password" name = "password"/> 
+        <br/>
+        <br/>
+        <button className="buttonMain" type= "submit" value="Submit" >Submit</button>
         </form>
         <br/>
-        <br/>
-        <button onClick={handleCreateAccount}> Create Account</button>
+        <button className="buttonMain2" onClick={handleCreateAccount}> Create Account</button>
+        </div>
+        <div>
+
 
 
         </div>
-
+  <img className="imageRight"  src={require("../images/wood-people.jpg")}  alt=" pin"  />
 
     </div>
 )

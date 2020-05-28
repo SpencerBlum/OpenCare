@@ -13,8 +13,6 @@ const defaultState = {
 
 
   }
-  // lat: 32.792610,
-  // long: -79.93
 
   export const reducer = (state = defaultState, action) => {
 

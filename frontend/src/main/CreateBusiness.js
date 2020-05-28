@@ -12,7 +12,9 @@ const CreateBusiness = (props) => {
 
     const handleCreateAccount = (e) => {
         console.log("happy")
-
+        console.log("happy")
+        console.log("happy")
+        console.log("hapdsdfsdfsdfsdfsdfsdfpy")
         e.preventDefault()
         console.log(e.target.email.value)
         let data = { 
@@ -23,10 +25,11 @@ const CreateBusiness = (props) => {
             address: e.target.address.value,
             city: e.target.city.value,
             state: e.target.state.value,
-            zip: e.target.state.zip,
+            zip: e.target.zip.value,
             img_url: e.target.img_url.value,
 
             } 
+            
     
         fetch('http://localhost:3000/createbusiness', {
             method: 'POST', // or 'PUT'
@@ -39,7 +42,7 @@ const CreateBusiness = (props) => {
             .then(response => response.json())
             .then(data => {
             console.log('Success:', data);
-                
+            
             if (data.error){
                 window.alert("Must have a name email and address")
             } else {

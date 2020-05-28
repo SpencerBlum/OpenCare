@@ -3,9 +3,12 @@ import { useHistory, useLocation } from "react-router-dom";
 import { useSelector,useDispatch } from 'react-redux'
 import Geocode from "react-geocode";
 
+import { FaSearch } from 'react-icons/fa'
+
 import { loadLat, loadLong } from '../actions/map.js'
 
 import  {locationSearch, businessNameSearch } from "../actions/search.js"
+import  {loadCurrentUser } from "../actions/User.js"
 
 const GOOGLE_API_KEY = `${process.env.REACT_APP_GOOGLE_MAP_KEY}`
 
@@ -38,27 +41,12 @@ const Header = (props) => {
             const { lat, lng } = response.results[0].geometry.location;
             dispatch(loadLat(lat))
             dispatch(loadLong(lng))
-            
-            // let obj = { 
-            //     lat: lat,
-            //     lng: lng
-            // } 
-    
-            // console.log(obj)
-            // return obj
         },
         error => {
             console.error(error);
         })
     }
-    
-      // static defaultProps = {
-      //   center: {
-      //     lat: 32.792610,
-      //     lng: -79.93
-      //   },
-      //   zoom: 11
-      // };
+
     
     const  dispatchCurrentMapLocation = (newA)=> {
         
@@ -85,30 +73,68 @@ const handleHeaderSubmit = (e) => {
         dispatchCurrentMapLocation(e.target.location.value)
         }
        
-        if(e.target.location.value == "" && e.target.businessSearch.value == "" ){
+        if(e.target.location.value !== "" && e.target.businessSearch.value !== "" ){
             console.log(currentRenderedBusinesses[0].address)
             dispatchCurrentMapLocation(currentRenderedBusinesses[0].address)
             console.log("happy")
             }
     }
 
+    const handleImage = ()=> {
+        history.push("/")
+    }
+
+    const handleLogout = () => {
+        
+
+
+        const data = { currentUser: currentUser.id };
+        console.log(data)
+        fetch('http://localhost:3000/logout', {
+        method: 'POST', // or 'PUT'
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data),
+        })
+        .then(response => response.json())
+        .then(data => {
+            dispatch(loadCurrentUser(null))
+        console.log('Success:', data);
+        })
+        .catch((error) => {
+        console.error('Error:', error);
+        });
+        
+    }
 
 
 return(
     <div className= "headerContainer" >
+
+            <img className="logo" onClick = {handleImage} src={require("../images/opencare.png")}  alt=" pin"  />
     <div className="input-div"> 
+
     <form onSubmit = {(e) => handleHeaderSubmit(e)}>
-        <input className="input-box" name="businessSearch"  type="text" placeholder={"Camp or childcare"} />
+        <input className="input-box" name="businessSearch"  type="text" placeholder={"Business name"} />
         <input  className="input-box" name="location"  type="text" placeholder={"Location"} />
-        <input type= "submit" value="Submit" />
+<button className= "buttonSubmit" type= "submit" > <FaSearch /> </button>
     </form>
     </div>
 
-    { currentUser? "" : <button  onClick={(e) => handleRoute(e)} name= "/Login"> Login </button>}
-    { currentUser? "" : <button onClick={(e) => handleRoute(e)}  name="/Signup" > Signup  </button>}
-    { currentUser?  <button onClick={(e) => handleRoute(e)}  name="/Profile" > Profile  </button>  : ""}
+    <div className= "buttonsDiv">
+
+    { currentUser? "" : <button className = "buttonMain"  onClick={(e) => handleRoute(e)} name= "/Login"> Login </button>}
+    { currentUser? "" : <button className = "buttonMain2 buttonMargin" onClick={(e) => handleRoute(e)}  name="/Signup" > Signup  </button>}
+    {/* { currentUser?  <button className = "buttonMain" onClick={(e) => handleRoute(e)}  name="/Profile" > Profile  </button>  : ""} */}
     {/* { currentUser?  <button onClick={(e) => handleRoute(e)}  name="/create-business" > Create Business  </button>  : ""} */}
-    <button onClick={(e) => handleRoute(e)}  name="/business/form/new" > Create Business  </button> 
+    { currentUser? <button className = "buttonMain buttonMargin" onClick={handleLogout}  name="/business/form/new" > Logout  </button> : ""}
+    { currentUser? <button className = "buttonMain2 buttonMargin" onClick={(e) => handleRoute(e)}  name="/business/form/new" > Create Business  </button> : ""}
+
+ {/* <button className = "buttonMain" onClick={handleLogout}  name="/business/form/new" > Logout  </button>  */}
+    </div>
+
+    { currentUser?  <div className= "profileImageDiv">  <img name="/Profile" onClick={(e) => handleRoute(e)} className= "profileImage" src= {currentUser.img_url} /> </div>  : ""}
     </div>
 )
 }

@@ -30,7 +30,7 @@ ActiveRecord::Schema.define(version: 2020_05_18_204047) do
     t.string "website"
     t.string "kid_count"
     t.string "staff_count"
-    t.integer "zip_code"
+    t.string "zip_code"
     t.float "avg_review"
     t.boolean "is_approved"
     t.string "bio"

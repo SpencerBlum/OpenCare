@@ -17,4 +17,6 @@ class BusinessesSerializer < ActiveModel::Serializer
      return array
   end
 
+
+
 end

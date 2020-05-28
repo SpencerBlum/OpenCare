@@ -22,8 +22,7 @@ const BusinessCardContainer = () => {
 
 return(
     <div className = "businesscard-container" >
-    Card Container
-    
+    All Childcare    
     {renderCards()}
     {/* {allBusinesses.map(business => <BusinessCard key = {business.id} business= {business} />)} */}
     

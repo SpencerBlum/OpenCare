@@ -1,5 +1,5 @@
 
-import React, { Component } from 'react';
+import React, { Component, createRef } from 'react';
 import GoogleMapReact from 'google-map-react';
 import Geocode from "react-geocode";
 import { connect } from 'react-redux'
@@ -8,7 +8,7 @@ import { loadLat, loadLong} from "../actions/map.js"
 
 const Marker = ({ text }) => {
 
-    const GOOGLE_API_KEY = `${process.env.REACT_APP_GOOGLE_MAP_KEY}`
+    // const GOOGLE_API_KEY = `${process.env.REACT_APP_GOOGLE_MAP_KEY}`
 return (
 <div id= "content" > 
 
@@ -87,13 +87,16 @@ getLatLng = (address) => {
    console.log("LOOK HERE", this.props.lat, this.props.long)
   //  this.dispatchCurrentMapLocation()
 }
+
   render() {
         console.log(this.props.currentLocationSearch)
         console.log(this.props)
     return (
       
       // Important! Always set the container height explicitly
-      <div  className = "mapPageLocation" style={{ height: '100vh', width: '30%'  }}>
+      
+      <div  className = "mapPageLocation" style={{ height: '86vh', width: '30%'  }}>
+       
          <GoogleMapReact
           bootstrapURLKeys={{ key: GOOGLE_API_KEY }}
           // defaultCenter= {{
@@ -108,8 +111,11 @@ getLatLng = (address) => {
           zoom={11}
         >
             {this.renderPins()}
+
         </GoogleMapReact>  
+        
       </div>
+   
     );
     }
   }

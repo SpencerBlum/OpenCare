@@ -11,7 +11,7 @@ class CreateBusinesses < ActiveRecord::Migration[6.0]
       t.string :website
       t.string :kid_count
       t.string :staff_count
-      t.integer :zip_code
+      t.string :zip_code
       t.float :avg_review, default: nil
       t.boolean :is_approved
       t.string :bio

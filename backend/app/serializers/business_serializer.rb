@@ -1,5 +1,5 @@
 class BusinessSerializer < ActiveModel::Serializer
-  attributes :id, :name, :bio , :img_url , :reviews, :avg_review, :city, :address, :traits, :latitude, :longitude, :user_id 
+  attributes :id, :name, :bio , :img_url , :reviews, :avg_review, :city, :address, :traits, :latitude, :longitude, :user_id, :fulladdress
 
 
 
@@ -20,6 +20,16 @@ class BusinessSerializer < ActiveModel::Serializer
     traits = self.object.traits
     return traits
   end
+
+  def fulladdress
+
+      business = Business.find_by(id: self.object.id)
+      puts business
+      # byebug
+      business = business.address + " " + business.city + " " + business.state  + " " + business.zip_code 
+      return business
+
+    end
 
 end
 
