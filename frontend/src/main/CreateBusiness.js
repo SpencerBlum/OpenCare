@@ -57,62 +57,64 @@ const CreateBusiness = (props) => {
 
 
     return (
-        <div className="">
+        <div className="loginContainer">
             
-        <   div>
+        <div className= "loginForm">
         <h1>New Business </h1>
         <form onSubmit= {(e)=> handleCreateAccount(e)} >
         <label> Name: </label>
         <br/>
-        <input type= "text" name = "name" /> 
+        <input className = "formInput" type= "text" name = "name" /> 
         <br/>
         <br/>
         <label> Bio: </label>
         <br/>
-        <input type= "text" name = "bio" /> 
+        <input  className = "formInput" type= "text" name = "bio" /> 
         <br/>
         <br/>
         <label> Profile Image: </label>
         <br/>
-        <input type= "text" name = "img_url" /> 
+        <input className = "formInput" type= "text" name = "img_url" /> 
         <br/>
         <br/>
         <label> Email: </label>
         <br/>
-        <input type= "text" name = "email" /> 
+        <input  className = "formInput" type= "text" name = "email" /> 
         <br/>
         <br/>
         <label> Website Link: </label>
         <br/>
-        <input type= "text" name = "website"/> 
+        <input className = "formInput" type= "text" name = "website"/> 
         <br/>
         <br/>
         <label> Address: </label>
         <br/>
-        <input type= "text" name = "address"/> 
+        <input className = "formInput" type= "text" name = "address"/> 
         <br/>
         <br/>
         <label> City: </label>
         <br/>
-        <input type= "text" name = "city"/> 
+        <input className = "formInput" type= "text" name = "city"/> 
         <br/>
         <br/>
         <label> State: </label>
         <br/>
-        <input type= "text" name = "state"/> 
+        <input  className = "formInput" type= "text" name = "state"/> 
         <br/>
         <br/>
         <label> Zip Code: </label>
         <br/>
-        <input type= "text" name = "zip"/> 
+        <input className = "formInput" type= "text" name = "zip"/> 
         <br/>
         <br/>
-        <input type= "submit" value="Submit" />
+        <button className="buttonMain" type= "submit" value="Submit" >Submit</button>
         </form>
         <br/>
         <br/>
         {/* <button onClick={handleCreateAccount}> Create Account</button> */}
-            </div>
+        
+        </div>
+        <img className="imageRight"  src={require("../images/wood-people.jpg")}  alt=" pin"  />
         </div>
       );
     };

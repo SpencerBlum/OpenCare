@@ -137,6 +137,16 @@ renderClaimBusinessButton = () => {
         
     }
 
+    rentWebsiteLink = () => {
+        if (this.props.currentBusiness){
+            if (this.props.currentBusiness.website !== null){
+                console.log(`window.location.${this.props.currentBusiness.website}`)
+             return   <a href={this.props.currentBusiness.website} target="_blank">Website</a> 
+              
+            }
+        }
+    }
+
     render(){
        
 return(
@@ -157,6 +167,7 @@ return(
 
     {/* { this.props.currentBusiness?  <h3> { this.props.currentBusiness.avg_review} Stars </h3> : null} */}
     { this.props.currentBusiness? <h5> { this.props.currentBusiness.address } </h5> : null}
+    {this.rentWebsiteLink()}
     { this.props.currentBusiness? <h4> { this.props.currentBusiness.bio } </h4> : null}
   
     
@@ -165,9 +176,13 @@ return(
     <br/>
     {this.props.currentBusiness? <NavLink to={`/Review/${this.props.currentBusiness.name}/${this.props.currentBusiness.id}`} exact>   <button className="buttonMain" href= "http://localhost:3001/Show"> Write Review </button> </NavLink> : null }
     {/* <button onClick={this.handleFollow()} > Follow </button> */}
+   
+    {/* {this.props.currentBusiness.website? <NavLink to={`/Review/${this.props.currentBusiness.name}/${this.props.currentBusiness.id}`} exact>   <button className="buttonMain2" href= "http://localhost:3001/Show"> Write Review </button> </NavLink> : null } */}
     {this.renderFollowBtn()}
     <h4> Reviews </h4>
     {this.props.currentBusiness && this.renderReviews() } 
+
+    
     </div>
     </div>
 )

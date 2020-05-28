@@ -35,8 +35,8 @@ return(
     <h3> {props.business.name} </h3>
 
     <h5> {props.business.address} </h5>
-
-    <Rating maxRating={5} defaultRating={Math.floor(props.business.avg_review)} icon='star' size='massive' disabled />   <label> { props.business.avg_review} Stars </label> 
+    
+    {props.business.avg_review?<div> <Rating maxRating={5} defaultRating={Math.floor(props.business.avg_review)} icon='star' size='massive' disabled />   <label> { props.business.avg_review} Stars </label> </div> : <h4>0 reviews </h4>}
 
     <label> Description:</label>
     <p> {props.business.bio}  </p>

@@ -62,7 +62,7 @@ history.push("/Profile")
 
 return(
 
-    <div className="">
+    <div className="loginForm">
             
     <   div>
     <h1>New Business </h1>
