@@ -1,7 +1,7 @@
 import React from 'react';
 import { useHistory } from "react-router-dom";
 import { useSelector,useDispatch } from 'react-redux'
-
+import {resetTraits} from "../actions/User.js"
 
 const Login = () => {
 
@@ -37,6 +37,7 @@ const handleSubmit = (e) => {
         console.log('Success:', data);
         if (data.error !== "Invalid username or password"){
         dispatch({type: "ADD_CURRENT_USER", payload: data})
+        dispatch(resetTraits())
         history.push('/')
         } else {
             window.alert("Wrong Password")
@@ -56,7 +57,7 @@ const handleCreateAccount = ()=> {
 return(
 
     <div className = "loginContainer">
-        <div className= " loginForm">
+        <div className= "loginForm">
         <img className="logo"  src={require("../images/opencare.png")}  alt=" pin"  />
         <br/>
         <h2 className= "headerLabel"> Login</h2>

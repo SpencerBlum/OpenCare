@@ -9,7 +9,8 @@ const defaultState = {
     checkedTraits: [],
     createOreEditsBiz: 'nil',
     lat: 32.792610,
-    long: -79.93
+    long: -79.93,
+    toggleFilter: false
 
 
   }
@@ -52,17 +53,17 @@ const defaultState = {
         console.log(action.payload)
         return {...state, long: action.payload}
       }
-      // case "ADD_LAT": {
-      //   console.log(action.payload)
-      //   return Object.assign({},{...state}, {lat: action.payload})
-      // }
-      // case "ADD_LONG": {
-      //   console.log(action.payload)
-      //   return Object.assign({},{...state}, {long: action.payload})
-      // }
+      case "TOGGLE_FOLLOW_FILTER": {
+        // console.log(action.payload)
+        return {...state, toggleFilter: !state.toggleFilter}
+      }
+      case "RESET_TRAITS": {
+        // console.log(action.payload)
+        return {...state, checkedTraits: []}
+      }
+ 
       default:
         return state
     }
   }
-
 

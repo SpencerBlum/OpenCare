@@ -4,6 +4,7 @@ import React from 'react';
 import { useHistory } from "react-router-dom";
 import { useSelector, useDispatch } from 'react-redux'
 import { Rating } from 'semantic-ui-react'
+import {resetTraits} from "../actions/User.js"
 
 const BusinessCard = (props) => {
 
@@ -18,6 +19,7 @@ const handleCardClick = () => {
 console.log("card clicked")
 dispatch({type: "ADD_CURRENT_BUSINESS", payload: props.business})
 if (currentBusiness !== {}){
+    dispatch(resetTraits())
     history.push(`/show/${props.business.name}/${props.business.id}`)
 }
 

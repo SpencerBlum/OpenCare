@@ -2,6 +2,7 @@ import React from 'react';
 import { useSelector,useDispatch } from 'react-redux'
 import { addOrDeleteTrait } from '../actions/filter'
 import { loadLat, loadLong} from '../actions/map'
+
 import Geocode from "react-geocode";
 
 

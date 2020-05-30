@@ -115,7 +115,7 @@ renderFollowBtn = () => {
         if (!follows.includes(this.props.currentBusiness.id)) {
             return  <button className="buttonMain2" onClick={this.handleFollow} > Follow </button> 
         }  else if (follows.includes(this.props.currentBusiness.id)) {
-            return  <button className="buttonMain2" onClick={this.handleFollow} > Unfollowed </button> 
+            return  <button className="buttonMain2" onClick={this.handleFollow} > Unfollow </button> 
         }
     } else { 
         return  <button className="buttonMain2" onClick={this.handleFollow} > Follow </button>
@@ -147,6 +147,15 @@ renderClaimBusinessButton = () => {
         }
     }
 
+    renderReviewRatings = () => {
+        if (this.props.currentBusiness){
+           return this.props.currentBusiness.avg_review? <div> <Rating maxRating={5} defaultRating={Math.floor(this.props.currentBusiness.avg_review)} icon='star' size='massive' disabled />   <label> { this.props.currentBusiness.avg_review} Stars </label> </div> : <h4>0 reviews </h4>
+              
+            }
+        }
+    
+
+
     render(){
        
 return(
@@ -154,7 +163,7 @@ return(
     <Header/>
     <br/>
     <div class="show-container">
-    {this.renderClaimBusinessButton()}
+    {/* {this.renderClaimBusinessButton()} */}
    {/* { this.props.currentBusiness.user_id == "nil" && this.props.currentUser? <button onClick = {this.handleClaim} > Claim business </button> : null} */}
     <br/>
     <br/>
@@ -162,8 +171,8 @@ return(
     
    
     { this.props.currentBusiness?  <h2> { this.props.currentBusiness.name } </h2> : null}
-
-    { this.props.currentBusiness? <> <Rating maxRating={5} defaultRating={Math.floor(this.props.currentBusiness.avg_review)} icon='star' size='massive' disabled />   <label> { this.props.currentBusiness.avg_review} Stars </label> </>: null}
+    {this.renderReviewRatings()}
+    {/* { this.props.currentBusiness? <> <Rating maxRating={5} defaultRating={Math.floor(this.props.currentBusiness.avg_review)} icon='star' size='massive' disabled />   <label> { this.props.currentBusiness.avg_review} Stars </label> </>: null} */}
 
     {/* { this.props.currentBusiness?  <h3> { this.props.currentBusiness.avg_review} Stars </h3> : null} */}
     { this.props.currentBusiness? <h5> { this.props.currentBusiness.address } </h5> : null}

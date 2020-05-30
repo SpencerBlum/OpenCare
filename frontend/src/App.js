@@ -54,7 +54,12 @@ fetch('http://localhost:3000/businesses')
   renderBusinessesFilter = ()=> {
     let array = this.props.allBusinesses
     console.log(this.props.currentBusinessSearch)
+    console.log(this.props.toggleFilter)
       
+    if(this.props.toggleFilter === true){
+      let followsArray = this.props.currentUser.follows.map(follow => follow.business_id)
+      array = array.filter(bussiness => followsArray.includes(bussiness.id))
+    }
       if(this.props.currentBusinessSearch !== ""){
       array =  array.filter(el => { 
         return el.name.toLowerCase().includes(this.props.currentBusinessSearch.toLowerCase()) 
@@ -66,6 +71,8 @@ fetch('http://localhost:3000/businesses')
         return el.fulladdress.toLowerCase().includes(this.props.currentLocationSearch.toLowerCase()) 
       })
     }
+
+   
 
   if(this.props.checkedTraits.length > 0)
   {
@@ -162,7 +169,9 @@ const mapStateToProps = state =>  {
       allBusinesses: state.allBusinesses,
       currentBusinessSearch: state.currentBusinessSearch,
       currentLocationSearch: state.currentLocationSearch,
-      checkedTraits: state.checkedTraits
+      checkedTraits: state.checkedTraits,
+      toggleFilter: state.toggleFilter,
+      currentUser: state.currentUser
       }
 }
 
