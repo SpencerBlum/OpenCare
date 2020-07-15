@@ -12,6 +12,6 @@ class User < ApplicationRecord
 
     validates :email, presence: true, uniqueness: true
 
-    geocoded_by :zip_code
+geocoded_by :zip_code
   after_validation :geocode, :if => :zip_code_changed?
 end

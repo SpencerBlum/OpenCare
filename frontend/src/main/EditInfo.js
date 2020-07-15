@@ -21,7 +21,7 @@ const handleEditAccount = (e) => {
         img_url: e.target.img_url.value,
         } 
 
-    fetch('http://localhost:3000/editUser', {
+    fetch('http://localhost:3000/editProfile', {
         method: 'PATCH', // or 'PUT'
         headers: {
             'Content-Type': 'application/json',
@@ -33,12 +33,9 @@ const handleEditAccount = (e) => {
         .then(data => {
         console.log('Success:', data);
             
-        if (data.error){
-            window.alert("Must have a name email and address")
-        } else {
+       
         dispatch(loadBusinesses(data))
         history.push('/Profile')
-        }
         })
         .catch((error) => {
         console.error('Error:', error);
