@@ -33,6 +33,16 @@ development:
   password:
   timeout: 5000
 
+production:
+  adapter: postgresql
+  encoding: unicode
+  host: ec2-54-236-169-55.compute-1.amazonaws.com
+  database: d84ac66pr5utk2
+  pool: 5
+  username: gwhbujdgvitodq
+  password: 4efb5d9acf7463eb02ac56b3213480698ae72ffef7c4013a66b190188cab7f43
+  timeout: 5000
+
 test:
   adapter: postgresql
   encoding: unicode
