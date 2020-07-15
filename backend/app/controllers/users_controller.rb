@@ -41,11 +41,31 @@ class UsersController < ApplicationController
     end
   end
 
-  def follow 
-    byebug
-    follow = Follow.new(user_id: params["userId"], business_id: params["id"] )
-    follow.save
+  def edit_profile
     user = User.find_by(id: params["id"])
-    render json: user
+
+    user.update()
   end
+
+
+  def follow 
+    doesfollow = Follow.find_by(user_id: params["userId"], business_id: params["id"]) 
+    if (doesfollow === nil)
+      follow = Follow.new(user_id: params["userId"], business_id: params["id"] )
+    follow.save
+    user = User.find_by(id: params["userId"])
+    render json: user
+    else 
+    doesfollow.destroy
+    doesfollow.save
+    user = User.find_by(id: params["userId"])
+    render json: user
+    end
+  end
+
+  def logout 
+    reset_session
+    render json: { message: "Logged out" }
+  end
+
 end

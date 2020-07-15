@@ -14,7 +14,7 @@ const BusinessCardContainer = () => {
     const renderCards = () =>{
         if(currentRenderedBusinesses !== []){
         return currentRenderedBusinesses.map(business => {
-        return    <BusinessCard key = {business.id} business= {business}/>
+        return  <BusinessCard key = {business.id} business= {business}/>
         }) 
     } 
     
@@ -22,8 +22,7 @@ const BusinessCardContainer = () => {
 
 return(
     <div className = "businesscard-container" >
-    Card Container
-    
+    All Childcare    
     {renderCards()}
     {/* {allBusinesses.map(business => <BusinessCard key = {business.id} business= {business} />)} */}
     

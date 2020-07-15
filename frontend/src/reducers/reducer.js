@@ -7,11 +7,13 @@ const defaultState = {
     currentLocationSearch: "",
     allTraits: [],
     checkedTraits: [],
-    createOreEditsBiz: 'nil'
+    createOreEditsBiz: 'nil',
+    lat: 32.792610,
+    long: -79.93,
+    toggleFilter: false
 
 
   }
-
 
   export const reducer = (state = defaultState, action) => {
 
@@ -43,9 +45,25 @@ const defaultState = {
         console.log(action.payload)
         return {...state, checkedTraits: action.payload}
       } 
+      case "ADD_LAT": {
+        console.log(action.payload)
+        return {...state, lat: action.payload}
+      }
+      case "ADD_LONG": {
+        console.log(action.payload)
+        return {...state, long: action.payload}
+      }
+      case "TOGGLE_FOLLOW_FILTER": {
+        // console.log(action.payload)
+        return {...state, toggleFilter: !state.toggleFilter}
+      }
+      case "RESET_TRAITS": {
+        // console.log(action.payload)
+        return {...state, checkedTraits: []}
+      }
+ 
       default:
         return state
     }
   }
-
 

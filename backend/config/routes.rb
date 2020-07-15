@@ -4,6 +4,8 @@ Rails.application.routes.draw do
 
   get '/businesses', to: 'businesses#index'
 
+  get '/business/:id', to: 'businesses#show'
+
   post '/createbusiness', to: 'businesses#create'
 
 
@@ -18,9 +20,12 @@ Rails.application.routes.draw do
   get "/traits", to: "traits#index"
   post '/login', to: 'users#login'
 
+  post '/logout', to: 'users#logout'
+
   post '/followBusiness', to: 'users#follow'
 
   patch '/resetpassword', to: 'users#resetpassword'
+  patch '/editProfile', to: 'users#edit_profile'
 
 
   post '/createAccount', to: 'users#create_account'
